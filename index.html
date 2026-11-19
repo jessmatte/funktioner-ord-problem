@@ -306,7 +306,7 @@
                     <h2 class="text-base font-bold dark:text-white text-slate-900">Välj rätt tolkning eller uttryck</h2>
                 </div>
                 <div class="dark:bg-slate-900 bg-slate-100 border dark:border-slate-700 border-slate-300 px-3 py-1 rounded-xl text-sm font-semibold dark:text-amber-300 text-amber-800" id="f1-score">
-                    Framsteg: 0 / 10
+                    Framsteg: 0 / 6
                 </div>
             </div>
 
@@ -329,17 +329,17 @@
 
                     <!-- FEEDBACK & NEXT BUTTON -->
                     <div id="f1-feedback-box" class="hidden w-full rounded-xl px-3.5 py-2 text-sm font-normal flex items-center justify-between gap-2">
-                        <span id="f1-feedback-text"></span>
+                        <span id="f1-feedback-text" class="leading-snug"></span>
                         <button id="f1-next-btn" onclick="nextFas1Question()" class="hidden bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold px-3.5 py-1 rounded-lg text-sm transition shadow-sm flex items-center gap-1.5 shrink-0">
                             <span>Nästa</span> <i class="fa-solid fa-arrow-right"></i>
                         </button>
                     </div>
 
-                    <!-- MILESTONE CHOICE BANNER (10 / 10) -->
+                    <!-- MILESTONE CHOICE BANNER (6 / 6) -->
                     <div id="f1-milestone-banner" class="hidden w-full dark:bg-emerald-950/90 bg-emerald-100 border-2 border-emerald-500 rounded-2xl p-3.5 text-left space-y-2">
                         <div class="font-bold dark:text-emerald-400 text-emerald-800 text-base flex items-center gap-2">
                             <i class="fa-solid fa-circle-check text-lg"></i>
-                            <span>Fas 1 avklarad! (10 / 10)</span>
+                            <span>Fas 1 avklarad! (6 / 6)</span>
                         </div>
                         <p class="text-sm dark:text-emerald-100 text-emerald-950 font-normal">
                             Fas 2 (Guidad) är nu upplåst. Vill du gå vidare till Fas 2 eller fortsätta träna här?
@@ -1368,10 +1368,10 @@
         let demoX = 3;
         let isDemoDragging = false;
 
-        // Fas 1 State (10/10, balanced, max 2 in a row)
+        // Fas 1 State (6/6, balanced 3+3, max 2 in a row, distractor-specific help text)
         let f1Current = null;
         let f1Score = 0;
-        let f1Target = 10;
+        let f1Target = 6;
         let f1Answered = false;
         let f1MilestoneShown = false;
         let f1TypeQueue = [];
@@ -1412,7 +1412,7 @@
         let f5RecentTypes = [];
 
         /* ---------------- BALANCED SEQUENCE GENERATOR (MAX 2 IN A ROW) ---------------- */
-        function generateBalancedDeck(typeA, typeB, countPerType = 5, prevHistory = []) {
+        function generateBalancedDeck(typeA, typeB, countPerType = 3, prevHistory = []) {
             const validSequences = [];
             const initLast = prevHistory.length > 0 ? prevHistory[prevHistory.length - 1] : null;
             const initRun = (prevHistory.length >= 2 && prevHistory[prevHistory.length - 1] === prevHistory[prevHistory.length - 2])
@@ -1436,7 +1436,7 @@
             return validSequences[Math.floor(Math.random() * validSequences.length)];
         }
 
-        function drawNextBalancedType(queueRef, recentRef, typeA, typeB, countPerType = 5) {
+        function drawNextBalancedType(queueRef, recentRef, typeA, typeB, countPerType = 3) {
             if (queueRef.length === 0) {
                 const fresh = generateBalancedDeck(typeA, typeB, countPerType, recentRef);
                 queueRef.push(...fresh);
@@ -2062,9 +2062,9 @@
             window.addEventListener('touchend', () => { isDemoDragging = false; });
         }
 
-        /* ---------------- TAB 1: FAS 1 — 1. Tolka (DYNAMIC FUNCTION TYPES) ---------------- */
+        /* ---------------- TAB 1: FAS 1 — 1. Tolka (6 PROBLEMS, DISTRACTOR HINTS) ---------------- */
         function generateFas1Problem() {
-            const subtype = drawNextBalancedType(f1TypeQueue, f1RecentTypes, 'notationToMeaning', 'textToNotation', 5);
+            const subtype = drawNextBalancedType(f1TypeQueue, f1RecentTypes, 'notationToMeaning', 'textToNotation', 3);
             const inst = createRandomLinearInstance(f1LastScenarioId, true);
             f1LastScenarioId = inst.tpl.id;
 
@@ -2081,44 +2081,58 @@
                     const d1 = x === 0
                         ? `Förändringen är ${formatSvNum(y)} ${tpl.yDisplayUnit} per ${tpl.unitSing}.`
                         : `Vid ${formatSvNum(y)} ${tpl.unitPlur} är värdet ${x} ${tpl.yDisplayUnit}.`;
+                    const d1Hint = x === 0
+                        ? `Förändringen per ${tpl.unitSing} ges av lutningen (${formatSvNum(k)} ${tpl.yDisplayUnit}/${tpl.unitSing}). Uttrycket ${fn}(0) = ${formatSvNum(y)} visar startvärdet när ${v} = 0.`
+                        : `Talet i parentesen (${x}) är ${tpl.unitPlur} (${v}), medan ${formatSvNum(y)} är funktionsvärdet ${fn}(${x}) i ${tpl.yDisplayUnit} — här har enheterna blivit ombytta.`;
+
                     const d2 = x === 0
                         ? `Efter ${formatSvNum(y)} ${tpl.unitPlur} är värdet 0 ${tpl.yDisplayUnit}.`
                         : `Startvärdet när ${v} = 0 är ${formatSvNum(y)} ${tpl.yDisplayUnit}.`;
+                    const d2Hint = x === 0
+                        ? `Här står det 0 i parentesen (${v} = 0), inte efter likhetstecknet. Alltså är det 0 ${tpl.unitPlur} som ger värdet ${formatSvNum(y)} ${tpl.yDisplayUnit}.`
+                        : `Startvärdet får du när ${v} = 0, alltså ${fn}(0). Här står det ${x} i parentesen, så värdet gäller vid ${x} ${x === 1 ? tpl.unitSing : tpl.unitPlur}.`;
+
                     return {
                         scenarioText,
                         prompt,
                         options: shuffleOptions([
                             { text: correct, isCorrect: true },
-                            { text: d1, isCorrect: false },
-                            { text: d2, isCorrect: false }
+                            { text: d1, isCorrect: false, hint: d1Hint },
+                            { text: d2, isCorrect: false, hint: d2Hint }
                         ])
                     };
                 } else if (subMode < 0.78) {
                     const prompt = `Du löser ekvationen ${fn}(${v}) = ${formatSvNum(y)} och får ${v} = ${x}. Vad betyder svaret?`;
                     const correct = tpl.meaningGivenY(x, y);
                     const d1 = `Vid ${formatSvNum(y)} ${tpl.unitPlur} är funktionsvärdet ${x} ${tpl.yDisplayUnit}.`;
+                    const d1Hint = `Du löste ut ${v} = ${x}, så ${x} mäter ${tpl.unitPlur}. Talet ${formatSvNum(y)} var funktionsvärdet i ${tpl.yDisplayUnit}.`;
                     const d2 = `Förändringen per ${tpl.unitSing} är ${x} ${tpl.yDisplayUnit}.`;
+                    const d2Hint = `Förändringen per ${tpl.unitSing} avläses direkt framför ${v} i formeln (${formatSvNum(k)}). Lösningen ${v} = ${x} anger antalet ${tpl.unitPlur} då funktionsvärdet är ${formatSvNum(y)} ${tpl.yDisplayUnit}.`;
+
                     return {
                         scenarioText,
                         prompt,
                         options: shuffleOptions([
                             { text: correct, isCorrect: true },
-                            { text: d1, isCorrect: false },
-                            { text: d2, isCorrect: false }
+                            { text: d1, isCorrect: false, hint: d1Hint },
+                            { text: d2, isCorrect: false, hint: d2Hint }
                         ])
                     };
                 } else {
                     const prompt = `Vad anger talet ${formatSvNum(k)} i formeln ${fn}(${v}) = ${tpl.exprStr(k, m)}?`;
                     const correct = tpl.rateMeaning(k);
                     const d1 = `Startvärdet när ${v} = 0 är ${formatSvNum(k)} ${tpl.yDisplayUnit}.`;
+                    const d1Hint = `Startvärdet när ${v} = 0 är konstanttermen (${formatSvNum(m)} ${tpl.yDisplayUnit}). Talet ${formatSvNum(k)} står framför ${v} och visar förändringen per ${tpl.unitSing}.`;
                     const d2 = `Det totala värdet efter ${formatSvNum(m)} ${tpl.unitPlur}.`;
+                    const d2Hint = `Talet ${formatSvNum(m)} är startvärdet i ${tpl.yDisplayUnit}, inte antalet ${tpl.unitPlur}. Talet ${formatSvNum(k)} anger hur mycket ${fn}(${v}) ändras per ${tpl.unitSing}.`;
+
                     return {
                         scenarioText,
                         prompt,
                         options: shuffleOptions([
                             { text: correct, isCorrect: true },
-                            { text: d1, isCorrect: false },
-                            { text: d2, isCorrect: false }
+                            { text: d1, isCorrect: false, hint: d1Hint },
+                            { text: d2, isCorrect: false, hint: d2Hint }
                         ])
                     };
                 }
@@ -2130,8 +2144,16 @@
                         prompt: tpl.zeroQuestion,
                         options: shuffleOptions([
                             { text: `Lös ekvationen ${fn}(${v}) = 0`, isCorrect: true },
-                            { text: `Beräkna ${fn}(0)`, isCorrect: false },
-                            { text: `Lös ekvationen ${fn}(${v}) = ${formatSvNum(m)}`, isCorrect: false }
+                            {
+                                text: `Beräkna ${fn}(0)`,
+                                isCorrect: false,
+                                hint: `${fn}(0) beräknar startvärdet när ${v} = 0. Här vill du veta när funktionsvärdet har sjunkit till 0, så lös ${fn}(${v}) = 0.`
+                            },
+                            {
+                                text: `Lös ekvationen ${fn}(${v}) = ${formatSvNum(m)}`,
+                                isCorrect: false,
+                                hint: `${formatSvNum(m)} är startvärdet vid ${v} = 0. När det har tagit helt slut är funktionsvärdet 0, inte ${formatSvNum(m)}.`
+                            }
                         ])
                     };
                 } else if (subMode < 0.65) {
@@ -2142,8 +2164,16 @@
                         prompt,
                         options: shuffleOptions([
                             { text: `Beräkna ${fn}(${targetX})`, isCorrect: true },
-                            { text: `Lös ekvationen ${fn}(${v}) = ${targetX}`, isCorrect: false },
-                            { text: `Beräkna ${fn}(${formatSvNum(m)})`, isCorrect: false }
+                            {
+                                text: `Lös ekvationen ${fn}(${v}) = ${targetX}`,
+                                isCorrect: false,
+                                hint: `${targetX} ${targetX === 1 ? tpl.unitSing : tpl.unitPlur} är ett ${v}-värde (variabeln), inte funktionsvärdet. Sätt därför in ${targetX} i parentesen: ${fn}(${targetX}).`
+                            },
+                            {
+                                text: `Beräkna ${fn}(${formatSvNum(m)})`,
+                                isCorrect: false,
+                                hint: `${formatSvNum(m)} är startvärdet i formeln, inte antalet ${tpl.unitPlur}. Byt i stället ut ${v} mot ${targetX} i ${fn}(${targetX}).`
+                            }
                         ])
                     };
                 } else {
@@ -2155,8 +2185,16 @@
                         prompt,
                         options: shuffleOptions([
                             { text: `Lös ekvationen ${fn}(${v}) = ${formatSvNum(targetY)}`, isCorrect: true },
-                            { text: `Beräkna ${fn}(${formatSvNum(targetY)})`, isCorrect: false },
-                            { text: `Lös ekvationen ${fn}(${v}) = ${targetX}`, isCorrect: false }
+                            {
+                                text: `Beräkna ${fn}(${formatSvNum(targetY)})`,
+                                isCorrect: false,
+                                hint: `${formatSvNum(targetY)} ${tpl.yDisplayUnit} är hela funktionsvärdet ${fn}(${v}), inte ${v}-värdet i ${tpl.unitPlur}. Ställ därför upp ekvationen ${fn}(${v}) = ${formatSvNum(targetY)}.`
+                            },
+                            {
+                                text: `Lös ekvationen ${fn}(${v}) = ${targetX}`,
+                                isCorrect: false,
+                                hint: `Efter likhetstecknet ska det givna funktionsvärdet (${formatSvNum(targetY)} ${tpl.yDisplayUnit}) stå, inte ${targetX}.`
+                            }
                         ])
                     };
                 }
@@ -2232,8 +2270,9 @@
 
                 btn.className = "w-full text-left px-3.5 py-2.5 rounded-xl border border-rose-500 bg-rose-500/20 dark:text-rose-300 text-rose-800 text-base font-normal transition flex items-center gap-3";
                 btn.disabled = true;
+                const hintText = chosen.hint || "Kontrollera vad variabeln inom parentesen respektive hela funktionsvärdet står för.";
                 fbBox.className = "w-full rounded-xl px-3.5 py-2 text-sm font-normal flex items-center justify-between gap-2 dark:bg-rose-950/90 bg-rose-100 border border-rose-500 dark:text-rose-200 text-rose-950";
-                fbText.innerHTML = `<i class="fa-solid fa-circle-xmark text-rose-500 mr-1.5"></i> Inte riktigt — kontrollera vad variabeln inom parentesen respektive hela funktionsvärdet står för.`;
+                fbText.innerHTML = `<i class="fa-solid fa-circle-xmark text-rose-500 mr-1.5"></i> <strong>Inte riktigt</strong> — ${hintText}`;
                 nextBtn.classList.add('hidden');
             }
         }
