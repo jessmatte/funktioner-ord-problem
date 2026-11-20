@@ -99,21 +99,21 @@
 
                         <div class="dark:bg-slate-950 bg-blue-50 border border-blue-500/50 rounded-xl p-3 space-y-1">
                             <div class="text-sm font-semibold dark:text-blue-400 text-blue-700 flex items-center justify-between gap-2">
-                                <span>1. Beräkna f(a) — variabelvärdet är givet</span>
+                                <span>1. Beräkna F(a) — variabelvärdet är givet</span>
                                 <span class="px-2 py-0.5 rounded bg-blue-500/20 dark:text-blue-300 text-blue-800 text-xs font-bold shrink-0">Sätt in t.ex. x = 3</span>
                             </div>
                             <p class="text-sm dark:text-slate-200 text-slate-800 font-normal leading-relaxed">
-                                Byt ut variabeln (t.ex. <strong>x</strong> eller <strong>t</strong>) mot det givna talet i formeln och räkna ut funktionsvärdet. Särskilt: <strong>f(0)</strong> ger startvärdet.
+                                Byt ut variabeln (t.ex. <strong>x</strong> eller <strong>t</strong>) mot det givna talet i formeln och räkna ut funktionsvärdet. Särskilt: <strong>F(0)</strong> ger startvärdet.
                             </p>
                         </div>
 
                         <div class="dark:bg-slate-950 bg-rose-50 border border-rose-500/50 rounded-xl p-3 space-y-1">
                             <div class="text-sm font-semibold dark:text-rose-400 text-rose-700 flex items-center justify-between gap-2">
-                                <span>2. Lös ekvationen f(x) = b — funktionsvärdet är givet</span>
+                                <span>2. Lös ekvationen F(x) = b — funktionsvärdet är givet</span>
                                 <span class="px-2 py-0.5 rounded bg-rose-500/20 dark:text-rose-300 text-rose-800 text-xs font-bold shrink-0">Lös för x eller t</span>
                             </div>
                             <p class="text-sm dark:text-slate-200 text-slate-800 font-normal leading-relaxed">
-                                Sätt funktionsuttrycket lika med målvärdet <strong>b</strong> och lös ekvationen. Särskilt: <strong>f(t) = 0</strong> ger nollstället (när något tar slut).
+                                Sätt funktionsuttrycket lika med målvärdet <strong>b</strong> och lös ekvationen. Särskilt: <strong>F(t) = 0</strong> ger nollstället (när något tar slut).
                             </p>
                         </div>
                     </div>
@@ -181,15 +181,15 @@
                         Begrepp &amp; Modell
                     </button>
                     <button id="tab-btn-1" onclick="switchTab(1)" class="tab-btn px-2.5 py-1 rounded-lg text-xs lg:text-sm font-medium transition dark:text-slate-400 text-slate-700 dark:hover:text-white hover:text-slate-900 flex items-center gap-1 shrink-0">
-                        <span>1. Tolka</span>
+                        <span>1. Vilket värde?</span>
                     </button>
                     <button id="tab-btn-2" onclick="switchTab(2)" class="tab-btn px-2.5 py-1 rounded-lg text-xs lg:text-sm font-medium transition dark:text-slate-500 text-slate-400 cursor-not-allowed opacity-60 flex items-center gap-1 shrink-0" disabled>
                         <i class="fa-solid fa-lock text-xs" id="tab-2-lock-icon"></i>
-                        <span>2. Guidad</span>
+                        <span>2. Direkt</span>
                     </button>
                     <button id="tab-btn-3" onclick="switchTab(3)" class="tab-btn px-2.5 py-1 rounded-lg text-xs lg:text-sm font-medium transition dark:text-slate-500 text-slate-400 cursor-not-allowed opacity-60 flex items-center gap-1 shrink-0" disabled>
                         <i class="fa-solid fa-lock text-xs" id="tab-3-lock-icon"></i>
-                        <span>3. Direkt</span>
+                        <span>3. Tolka</span>
                     </button>
                     <button id="tab-btn-4" onclick="switchTab(4)" class="tab-btn px-2.5 py-1 rounded-lg text-xs lg:text-sm font-medium transition dark:text-slate-500 text-slate-400 cursor-not-allowed opacity-60 flex items-center gap-1 shrink-0" disabled>
                         <i class="fa-solid fa-lock text-xs" id="tab-4-lock-icon"></i>
@@ -296,13 +296,267 @@
         </section>
 
         <!-- ================================================================= -->
-        <!-- FLIK 1: FAS 1 — 1. Tolka                                          -->
+        <!-- FLIK 1: FAS 1 — 1. Vilket värde? (GIVNA VÄRDET I TEXTUPPGIFTER)   -->
         <!-- ================================================================= -->
         <section id="tab-content-1" class="tab-content h-full flex flex-col justify-between space-y-2 hidden">
             
             <div class="dark:bg-slate-950 bg-white border dark:border-slate-800 border-slate-300 rounded-xl px-4 py-1.5 flex justify-between items-center shrink-0 shadow-sm">
                 <div>
-                    <span class="text-xs font-semibold uppercase tracking-wider dark:text-indigo-400 text-indigo-700">Fas 1 • Koppla ihop text, startvärde, nollställe och formel</span>
+                    <span class="text-xs font-semibold uppercase tracking-wider dark:text-indigo-400 text-indigo-700">Fas 1 • Identifiera given storhet i textuppgifter</span>
+                    <h2 class="text-base font-bold dark:text-white text-slate-900">Vilket värde är givet?</h2>
+                </div>
+                <div class="dark:bg-slate-900 bg-slate-100 border dark:border-slate-700 border-slate-300 px-3 py-1 rounded-xl text-sm font-semibold dark:text-amber-300 text-amber-800" id="f0-score">
+                    Framsteg: 0 / 10
+                </div>
+            </div>
+
+            <!-- CENTERED RAPID-FIRE IDENTIFICATION CARD -->
+            <div class="flex-grow flex items-center justify-center overflow-hidden">
+                <div class="w-full max-w-3xl dark:bg-slate-950 bg-white rounded-2xl p-4 sm:p-5 border dark:border-slate-800 border-slate-300 shadow-sm flex flex-col space-y-3.5">
+                    
+                    <!-- FUNCTION MODEL & WORD PROBLEM CUE -->
+                    <div class="dark:bg-slate-900 bg-slate-100 border dark:border-slate-800 border-slate-300 rounded-xl p-4 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-semibold uppercase tracking-wider dark:text-indigo-400 text-indigo-700">Funktion &amp; sammanhang</span>
+                            <span class="text-xs dark:text-slate-400 text-slate-500">Tryck 1 eller 2 för att svara</span>
+                        </div>
+                        <p id="f0-scenario-text" class="text-base dark:text-slate-200 text-slate-800 font-normal leading-relaxed"></p>
+                        <div class="pt-2 border-t dark:border-slate-800 border-slate-300">
+                            <h3 id="f0-prompt-text" class="text-lg sm:text-xl font-bold dark:text-amber-300 text-amber-800 leading-snug"></h3>
+                        </div>
+                    </div>
+
+                    <!-- TWO CHOICE BUTTONS (VARIABLE VS FUNCTION VALUE) -->
+                    <div class="space-y-1.5">
+                        <div class="text-xs font-semibold uppercase tracking-wider dark:text-slate-400 text-slate-600 text-center">
+                            Vilket värde är givet i uppgiften?
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            <button id="f0-btn-var" onclick="answerFas0('givenX')"
+                                    class="px-4 py-3.5 rounded-xl border-2 dark:border-slate-700 border-slate-300 dark:bg-slate-900 bg-slate-50 dark:text-slate-100 text-slate-900 hover:border-blue-500 transition flex items-center gap-3 text-left">
+                                <span class="w-7 h-7 rounded-lg bg-blue-600/20 dark:text-blue-300 text-blue-700 border border-blue-500/40 flex items-center justify-center text-xs font-bold shrink-0">1</span>
+                                <div>
+                                    <div id="f0-btn-var-title" class="text-base sm:text-lg font-bold">x-värdet</div>
+                                    <div id="f0-btn-var-sub" class="text-xs dark:text-slate-400 text-slate-600">dagar</div>
+                                </div>
+                            </button>
+
+                            <button id="f0-btn-fn" onclick="answerFas0('givenY')"
+                                    class="px-4 py-3.5 rounded-xl border-2 dark:border-slate-700 border-slate-300 dark:bg-slate-900 bg-slate-50 dark:text-slate-100 text-slate-900 hover:border-rose-500 transition flex items-center gap-3 text-left">
+                                <span class="w-7 h-7 rounded-lg bg-rose-600/20 dark:text-rose-300 text-rose-700 border border-rose-500/40 flex items-center justify-center text-xs font-bold shrink-0">2</span>
+                                <div>
+                                    <div id="f0-btn-fn-title" class="text-base sm:text-lg font-bold">funktionsvärdet K(x)</div>
+                                    <div id="f0-btn-fn-sub" class="text-xs dark:text-slate-400 text-slate-600">kr</div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- FEEDBACK & NEXT BUTTON -->
+                    <div id="f0-feedback-box" class="hidden w-full rounded-xl px-3.5 py-2.5 text-sm font-normal flex items-center justify-between gap-2">
+                        <span id="f0-feedback-text" class="leading-snug"></span>
+                        <button id="f0-next-btn" onclick="nextFas0Question()" class="hidden bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold px-3.5 py-1 rounded-lg text-sm transition shadow-sm flex items-center gap-1.5 shrink-0">
+                            <span>Nästa</span> <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- MILESTONE CHOICE BANNER (10 / 10) -->
+                    <div id="f0-milestone-banner" class="hidden w-full dark:bg-emerald-950/90 bg-emerald-100 border-2 border-emerald-500 rounded-2xl p-3.5 text-left space-y-2">
+                        <div class="font-bold dark:text-emerald-400 text-emerald-800 text-base flex items-center gap-2">
+                            <i class="fa-solid fa-circle-check text-lg"></i>
+                            <span>Fas 1 avklarad! (10 / 10)</span>
+                        </div>
+                        <p class="text-sm dark:text-emerald-100 text-emerald-950 font-normal">
+                            Fas 2 (Direkt) är nu upplåst. Där tränar du på att räkna ut deluppgifter a) och b) för en given funktion.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <button onclick="switchTab(2)" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold py-1.5 px-3 rounded-xl text-sm transition shadow-sm flex items-center justify-center gap-1.5">
+                                <span>Gå till Fas 2: Direkt</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                            <button onclick="continueFas0Practice()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-1.5 px-3 rounded-xl text-sm transition shadow-sm flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-rotate-right"></i>
+                                <span>Fortsätt träna här</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- FLIK 2: FAS 2 — 2. Direkt (WORKSHEET-STYLE DELUPPGIFTER a & b)    -->
+        <!-- ================================================================= -->
+        <section id="tab-content-2" class="tab-content h-full flex flex-col justify-between space-y-2 hidden">
+            
+            <div class="dark:bg-slate-950 bg-white border dark:border-slate-800 border-slate-300 rounded-xl px-4 py-1.5 flex justify-between items-center shrink-0 shadow-sm">
+                <div class="flex items-center gap-2.5">
+                    <span class="px-2.5 py-0.5 bg-blue-100 dark:bg-blue-900/70 text-blue-800 dark:text-blue-300 font-semibold text-xs sm:text-sm rounded-full border border-blue-300 dark:border-blue-700">
+                        Fas 2 • Direkt: Beräkna deluppgift a) och b)
+                    </span>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <span class="text-sm dark:text-slate-300 text-slate-700 font-semibold" id="d2-score">Klarade: 0 / 5</span>
+                </div>
+            </div>
+
+            <!-- TWO-COLUMN WORKSPACE: LEFT = UPPGIFT (a & b), RIGHT = DINA SVAR -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-3 flex-grow items-stretch overflow-hidden">
+                
+                <!-- LEFT COLUMN: UPPGIFT WITH DELUPPGIFT a) & b) -->
+                <div class="md:col-span-5 dark:bg-slate-950 bg-white rounded-2xl p-4 border dark:border-slate-800 border-slate-300 flex flex-col justify-between shadow-sm overflow-hidden">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between border-b dark:border-slate-800 border-slate-200 pb-2">
+                            <span class="text-xs font-bold uppercase tracking-wider dark:text-indigo-400 text-indigo-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-book-open"></i> Uppgift
+                            </span>
+                            <button type="button" onclick="revealD2Hint()" id="d2-hint-btn" class="text-xs font-semibold px-2.5 py-1 rounded-lg dark:bg-slate-900 bg-slate-100 border dark:border-slate-700 border-slate-300 dark:text-amber-300 text-amber-800 hover:border-amber-500 transition flex items-center gap-1">
+                                <i class="fa-solid fa-lightbulb"></i> Visa ledtråd
+                            </button>
+                        </div>
+
+                        <p class="text-base dark:text-slate-100 text-slate-900 font-normal leading-relaxed" id="d2-scenario-text"></p>
+
+                        <!-- DELUPPGIFT a) & b) -->
+                        <div class="space-y-2.5 pt-2 border-t dark:border-slate-800 border-slate-200">
+                            <div class="flex items-start gap-2">
+                                <span class="font-bold dark:text-amber-300 text-amber-800 text-base shrink-0">a)</span>
+                                <p id="d2-prompt-a" class="text-base font-semibold dark:text-slate-100 text-slate-900 leading-snug"></p>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <span class="font-bold dark:text-amber-300 text-amber-800 text-base shrink-0">b)</span>
+                                <p id="d2-prompt-b" class="text-base font-semibold dark:text-slate-100 text-slate-900 leading-snug"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROGRESSIVE ALGEBRAIC HINT BOX -->
+                    <div id="d2-hint-box" class="hidden dark:bg-amber-950/60 bg-amber-50 border border-amber-500/60 rounded-xl p-3 text-xs sm:text-sm dark:text-amber-200 text-amber-950 space-y-1">
+                        <div class="font-bold text-xs uppercase tracking-wider dark:text-amber-400 text-amber-800 flex items-center gap-1.5">
+                            <i class="fa-solid fa-lightbulb"></i> Uppställning
+                        </div>
+                        <p id="d2-hint-text" class="font-normal leading-snug"></p>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: DINA SVAR FOR a) AND b) -->
+                <div class="md:col-span-7 dark:bg-slate-950 bg-white rounded-2xl p-3.5 border dark:border-slate-800 border-slate-300 flex flex-col justify-between shadow-sm space-y-2.5 overflow-hidden">
+                    <div class="space-y-2.5">
+                        <div class="flex items-center justify-between border-b dark:border-slate-800 border-slate-200 pb-1.5">
+                            <span class="text-xs font-bold uppercase tracking-wider dark:text-emerald-400 text-emerald-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-pen-to-square"></i> Dina svar
+                            </span>
+                            <span class="text-xs dark:text-slate-400 text-slate-500">Använd funktionsnotering (t.ex. K(4) = ... eller x = ...)</span>
+                        </div>
+
+                        <!-- DELUPPGIFT A INPUT BOX -->
+                        <div id="d2-card-a" class="dark:bg-slate-900 bg-slate-100 border dark:border-slate-800 border-slate-300 rounded-xl p-2.5 space-y-1.5 transition">
+                            <div class="flex flex-wrap items-center justify-between gap-1.5">
+                                <span class="text-sm font-bold dark:text-amber-300 text-amber-800 flex items-center gap-1.5">
+                                    <span>Deluppgift a)</span>
+                                    <span id="d2-badge-a" class="hidden text-xs font-semibold px-2 py-0.5 rounded bg-emerald-500/20 dark:text-emerald-300 text-emerald-800">
+                                        <i class="fa-solid fa-check"></i> Klar
+                                    </span>
+                                </span>
+                                <div class="flex gap-1.5">
+                                    <button type="button" onclick="insertD2Prefix('a', 'fn')" id="d2-a-fn-btn" class="px-2.5 py-0.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-semibold text-xs sm:text-sm transition shadow-sm">
+                                        K() =
+                                    </button>
+                                    <button type="button" onclick="insertD2Prefix('a', 'var')" id="d2-a-var-btn" class="px-2.5 py-0.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-semibold text-xs sm:text-sm transition shadow-sm">
+                                        x =
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-2">
+                                <input type="text" id="d2-input-a" autocomplete="off"
+                                       class="flex-grow dark:bg-slate-950 bg-white border dark:border-slate-700 border-slate-300 dark:text-white text-slate-900 font-semibold text-base rounded-lg px-3 py-1.5 outline-none focus:border-indigo-500">
+                                <button onclick="checkD2Part('a')" id="d2-submit-a" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm px-3.5 py-1.5 rounded-lg transition shadow-sm shrink-0">
+                                    Rätta a
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- DELUPPGIFT B INPUT BOX -->
+                        <div id="d2-card-b" class="dark:bg-slate-900 bg-slate-100 border dark:border-slate-800 border-slate-300 rounded-xl p-2.5 space-y-1.5 transition">
+                            <div class="flex flex-wrap items-center justify-between gap-1.5">
+                                <span class="text-sm font-bold dark:text-amber-300 text-amber-800 flex items-center gap-1.5">
+                                    <span>Deluppgift b)</span>
+                                    <span id="d2-badge-b" class="hidden text-xs font-semibold px-2 py-0.5 rounded bg-emerald-500/20 dark:text-emerald-300 text-emerald-800">
+                                        <i class="fa-solid fa-check"></i> Klar
+                                    </span>
+                                </span>
+                                <div class="flex gap-1.5">
+                                    <button type="button" onclick="insertD2Prefix('b', 'fn')" id="d2-b-fn-btn" class="px-2.5 py-0.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-semibold text-xs sm:text-sm transition shadow-sm">
+                                        K() =
+                                    </button>
+                                    <button type="button" onclick="insertD2Prefix('b', 'var')" id="d2-b-var-btn" class="px-2.5 py-0.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-semibold text-xs sm:text-sm transition shadow-sm">
+                                        x =
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-2">
+                                <input type="text" id="d2-input-b" autocomplete="off"
+                                       class="flex-grow dark:bg-slate-950 bg-white border dark:border-slate-700 border-slate-300 dark:text-white text-slate-900 font-semibold text-base rounded-lg px-3 py-1.5 outline-none focus:border-indigo-500">
+                                <button onclick="checkD2Part('b')" id="d2-submit-b" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm px-3.5 py-1.5 rounded-lg transition shadow-sm shrink-0">
+                                    Rätta b
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2 shrink-0">
+                        <!-- FEEDBACK BANNER -->
+                        <div id="d2-feedback-banner" class="hidden dark:bg-emerald-950/80 bg-emerald-100 border border-emerald-500 rounded-xl p-2.5 text-sm dark:text-emerald-200 text-emerald-950 space-y-1.5">
+                            <div class="font-normal flex items-start gap-2" id="d2-feedback-msg"></div>
+                            <div id="d2-next-row" class="hidden flex justify-between items-center pt-1.5 border-t dark:border-emerald-900 border-emerald-300">
+                                <span class="text-xs sm:text-sm">Tryck Enter eller klicka:</span>
+                                <button onclick="generateNextDirectWorksheet()" id="d2-next-btn" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold px-3.5 py-1 rounded-lg text-sm transition shadow-sm flex items-center gap-1.5">
+                                    <span>Nästa uppgift</span> <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- MILESTONE CHOICE BANNER (5 / 5) -->
+                        <div id="d2-milestone-banner" class="hidden dark:bg-amber-950/90 bg-amber-100 border-2 border-amber-500 rounded-xl p-3 text-sm dark:text-amber-100 text-amber-950 space-y-2 shadow-md">
+                            <div class="font-bold dark:text-amber-400 text-amber-800 text-base flex items-center gap-2">
+                                <i class="fa-solid fa-trophy text-amber-500"></i>
+                                <span>Fas 2 avklarad! (5 / 5)</span>
+                            </div>
+                            <p class="font-normal">
+                                Fas 3 (Tolka) är nu upplåst. Där tränar du på att koppla ihop text, startvärde, nollställe och formel.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                <button onclick="switchTab(3)" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold px-3 py-1.5 rounded-lg text-sm transition shadow-sm flex items-center justify-center gap-1.5">
+                                    <span>Gå till Fas 3: Tolka</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                                <button onclick="continueD2Practice()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-3 py-1.5 rounded-lg text-sm transition shadow-sm flex items-center justify-center gap-1.5">
+                                    <i class="fa-solid fa-rotate-right"></i>
+                                    <span>Fortsätt träna här</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ================================================================= -->
+        <!-- FLIK 3: FAS 3 — 3. Tolka (EXACT ORIGINAL TOLKA PHASE)             -->
+        <!-- ================================================================= -->
+        <section id="tab-content-3" class="tab-content h-full flex flex-col justify-between space-y-2 hidden">
+            
+            <div class="dark:bg-slate-950 bg-white border dark:border-slate-800 border-slate-300 rounded-xl px-4 py-1.5 flex justify-between items-center shrink-0 shadow-sm">
+                <div>
+                    <span class="text-xs font-semibold uppercase tracking-wider dark:text-indigo-400 text-indigo-700">Fas 3 • Koppla ihop text, startvärde, nollställe och formel</span>
                     <h2 class="text-base font-bold dark:text-white text-slate-900">Välj rätt tolkning eller uttryck</h2>
                 </div>
                 <div class="dark:bg-slate-900 bg-slate-100 border dark:border-slate-700 border-slate-300 px-3 py-1 rounded-xl text-sm font-semibold dark:text-amber-300 text-amber-800" id="f1-score">
@@ -339,14 +593,14 @@
                     <div id="f1-milestone-banner" class="hidden w-full dark:bg-emerald-950/90 bg-emerald-100 border-2 border-emerald-500 rounded-2xl p-3.5 text-left space-y-2">
                         <div class="font-bold dark:text-emerald-400 text-emerald-800 text-base flex items-center gap-2">
                             <i class="fa-solid fa-circle-check text-lg"></i>
-                            <span>Fas 1 avklarad! (6 / 6)</span>
+                            <span>Fas 3 avklarad! (6 / 6)</span>
                         </div>
                         <p class="text-sm dark:text-emerald-100 text-emerald-950 font-normal">
-                            Fas 2 (Guidad) är nu upplåst. Vill du gå vidare till Fas 2 eller fortsätta träna här?
+                            Fas 4 (Utmaning) är nu upplåst. Vill du gå vidare till Utmaningen eller fortsätta träna här?
                         </p>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                            <button onclick="switchTab(2)" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold py-1.5 px-3 rounded-xl text-sm transition shadow-sm flex items-center justify-center gap-1.5">
-                                <span>Gå till Fas 2: Guidad</span>
+                            <button onclick="switchTab(4)" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold py-1.5 px-3 rounded-xl text-sm transition shadow-sm flex items-center justify-center gap-1.5">
+                                <span>Gå till Fas 4: Utmaning</span>
                                 <i class="fa-solid fa-arrow-right"></i>
                             </button>
                             <button onclick="continueFas1Practice()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-1.5 px-3 rounded-xl text-sm transition shadow-sm flex items-center justify-center gap-1.5">
@@ -357,340 +611,6 @@
                     </div>
 
                 </div>
-            </div>
-
-        </section>
-
-        <!-- ================================================================= -->
-        <!-- FLIK 2: FAS 2 — 2. Guidad (TWO-COLUMN: UPPGIFT / DINA SVAR)       -->
-        <!-- ================================================================= -->
-        <section id="tab-content-2" class="tab-content h-full flex flex-col justify-between space-y-2 hidden">
-            
-            <div class="dark:bg-slate-950 bg-white border dark:border-slate-800 border-slate-300 rounded-xl px-4 py-1.5 flex justify-between items-center shrink-0 shadow-sm">
-                <div>
-                    <span class="text-xs font-semibold uppercase tracking-wider dark:text-indigo-400 text-indigo-700">Fas 2 • Algebraisk lösning steg för steg</span>
-                    <h2 class="text-base font-bold dark:text-white text-slate-900">Identifiera värde, visa ersättning, räkna och tolka</h2>
-                </div>
-                <div class="dark:bg-slate-900 bg-slate-100 border dark:border-slate-700 border-slate-300 px-3 py-1 rounded-xl text-sm font-semibold dark:text-amber-300 text-amber-800" id="g1-score">
-                    Framsteg: 0 / 5
-                </div>
-            </div>
-
-            <!-- TWO-COLUMN WORKSPACE: LEFT = UPPGIFT, RIGHT = DINA SVAR -->
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-3 flex-grow items-stretch overflow-hidden">
-                
-                <!-- LEFT COLUMN: UPPGIFT -->
-                <div class="md:col-span-5 dark:bg-slate-950 bg-white rounded-2xl p-4 border dark:border-slate-800 border-slate-300 flex flex-col justify-between shadow-sm overflow-hidden">
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between border-b dark:border-slate-800 border-slate-200 pb-2">
-                            <span class="text-xs font-bold uppercase tracking-wider dark:text-indigo-400 text-indigo-700 flex items-center gap-1.5">
-                                <i class="fa-solid fa-book-open"></i> Uppgift
-                            </span>
-                        </div>
-
-                        <p class="text-base sm:text-lg dark:text-slate-100 text-slate-900 font-normal leading-relaxed" id="g1-scenario-text"></p>
-
-                        <p class="text-base sm:text-lg font-bold dark:text-amber-300 text-amber-800 leading-relaxed" id="g1-prompt-title"></p>
-
-                        <!-- REVEALED AFTER CALCULATION IS SOLVED -->
-                        <div id="g1-interpret-prompt" class="hidden pt-2 border-t dark:border-slate-800 border-slate-200">
-                            <p class="text-base sm:text-lg font-semibold dark:text-indigo-300 text-indigo-700 leading-relaxed">
-                                Tolka vad ditt svar betyder i det här sammanhanget.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="text-xs dark:text-slate-400 text-slate-600 pt-2 border-t dark:border-slate-800/70 border-slate-200">
-                        Lös beräkningen först i steg 1–3. Därefter visas tolkningsfrågan.
-                    </div>
-                </div>
-
-                <!-- RIGHT COLUMN: DINA SVAR -->
-                <div class="md:col-span-7 dark:bg-slate-950 bg-white rounded-2xl p-3.5 border dark:border-slate-800 border-slate-300 flex flex-col justify-between shadow-sm space-y-2 overflow-hidden">
-                    <div class="flex items-center justify-between border-b dark:border-slate-800 border-slate-200 pb-1.5 shrink-0">
-                        <span class="text-xs font-bold uppercase tracking-wider dark:text-emerald-400 text-emerald-700 flex items-center gap-1.5">
-                            <i class="fa-solid fa-pen-to-square"></i> Dina svar
-                        </span>
-                    </div>
-
-                    <div class="space-y-2 flex-grow flex flex-col justify-center">
-                        <!-- STEP 1: WHICH VALUE IS GIVEN? -->
-                        <div id="g1-step-1-box" class="dark:bg-slate-900 bg-slate-100 border-2 border-indigo-500 rounded-xl px-3 py-1.5 flex items-center justify-between gap-2">
-                            <div class="text-sm font-medium dark:text-white text-slate-900 flex items-center gap-2">
-                                <span class="w-5 h-5 rounded-full bg-indigo-600 text-white text-xs flex items-center justify-center font-bold shrink-0">1</span>
-                                <span>Vilket värde är givet i uppgiften?</span>
-                            </div>
-                            <div class="grid grid-cols-2 gap-2 w-52 shrink-0">
-                                <button onclick="answerG1Step1('givenX')" id="g1-s1-btn-x" class="py-1 px-2.5 dark:bg-slate-950 bg-white dark:text-slate-100 text-slate-900 border border-slate-300 dark:border-slate-700 hover:border-indigo-500 rounded-lg text-center text-sm font-medium transition">
-                                    x-värdet
-                                </button>
-                                <button onclick="answerG1Step1('givenY')" id="g1-s1-btn-y" class="py-1 px-2.5 dark:bg-slate-950 bg-white dark:text-slate-100 text-slate-900 border border-slate-300 dark:border-slate-700 hover:border-indigo-500 rounded-lg text-center text-sm font-medium transition">
-                                    funktionsvärdet
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- STEP 2: SHOW ERSÄTTNING -->
-                        <div id="g1-step-2-box" class="dark:bg-slate-900 bg-slate-100 border dark:border-slate-800 border-slate-300 rounded-xl px-3 py-2 space-y-1.5 opacity-40 pointer-events-none transition">
-                            <div class="flex flex-wrap items-center justify-between gap-1.5">
-                                <div class="text-sm font-medium dark:text-white text-slate-900 flex items-center gap-2">
-                                    <span class="w-5 h-5 rounded-full bg-slate-600 text-white text-xs flex items-center justify-center font-bold shrink-0">2</span>
-                                    <span>Visa ersättningen:</span>
-                                </div>
-                                <div class="flex gap-1.5 items-center text-xs sm:text-sm">
-                                    <button type="button" id="g1-s2-fn-btn" onclick="insertG1SubFnTemplate()" class="px-2.5 py-0.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded font-semibold transition">
-                                        K() =
-                                    </button>
-                                    <button type="button" id="g1-s2-var-btn" onclick="insertG1SubVarTemplate()" class="px-2.5 py-0.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded font-semibold transition">
-                                        x =
-                                    </button>
-                                    <button type="button" onclick="insertAtCursor('g1-sub-input', ' · ')" class="px-2.5 py-0.5 dark:bg-slate-800 bg-slate-200 dark:text-slate-100 text-slate-900 border dark:border-slate-600 border-slate-400 hover:border-indigo-500 rounded font-bold transition">
-                                        ·
-                                    </button>
-                                    <button type="button" onclick="insertAtCursor('g1-sub-input', ' + ')" class="px-2.5 py-0.5 dark:bg-slate-800 bg-slate-200 dark:text-slate-100 text-slate-900 border dark:border-slate-600 border-slate-400 hover:border-indigo-500 rounded font-bold transition">
-                                        +
-                                    </button>
-                                    <button type="button" onclick="insertAtCursor('g1-sub-input', ' − ')" class="px-2.5 py-0.5 dark:bg-slate-800 bg-slate-200 dark:text-slate-100 text-slate-900 border dark:border-slate-600 border-slate-400 hover:border-indigo-500 rounded font-bold transition">
-                                        −
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center gap-2">
-                                <input type="text" id="g1-sub-input" autocomplete="off"
-                                       class="flex-grow dark:bg-slate-950 bg-white border dark:border-slate-700 border-slate-300 dark:text-white text-slate-900 font-medium text-base rounded-lg px-3 py-1 outline-none focus:border-indigo-500">
-                                <button onclick="submitG1Step2()" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm px-4 py-1 rounded-lg transition shadow-sm shrink-0">
-                                    Rätta
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- STEP 3: COMPUTE FINAL ANSWER -->
-                        <div id="g1-step-3-box" class="dark:bg-slate-900 bg-slate-100 border dark:border-slate-800 border-slate-300 rounded-xl px-3 py-2 space-y-1.5 opacity-40 pointer-events-none transition">
-                            <div class="flex flex-wrap items-center justify-between gap-1.5">
-                                <div class="text-sm font-medium dark:text-white text-slate-900 flex items-center gap-2">
-                                    <span class="w-5 h-5 rounded-full bg-slate-600 text-white text-xs flex items-center justify-center font-bold shrink-0">3</span>
-                                    <span>Räkna ut och skriv ditt slutgiltiga svar:</span>
-                                </div>
-                                <div class="flex gap-1.5 items-center text-xs sm:text-sm">
-                                    <button type="button" id="g1-s3-fn-btn" onclick="insertG1FinalFnTemplate()" class="px-2.5 py-0.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded font-semibold transition">
-                                        K() =
-                                    </button>
-                                    <button type="button" id="g1-s3-var-btn" onclick="insertG1FinalVarTemplate()" class="px-2.5 py-0.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded font-semibold transition">
-                                        x =
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center gap-2">
-                                <input type="text" id="g1-final-input" autocomplete="off"
-                                       class="flex-grow dark:bg-slate-950 bg-white border dark:border-slate-700 border-slate-300 dark:text-white text-slate-900 font-medium text-base rounded-lg px-3 py-1 outline-none focus:border-indigo-500">
-                                <button onclick="submitG1Step3()" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm px-4 py-1 rounded-lg transition shadow-sm shrink-0">
-                                    Rätta
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- STEP 4: INTERPRETATION IN WORDS (HIDDEN UNTIL STEP 3 IS SOLVED) -->
-                        <div id="g1-step-4-box" class="hidden dark:bg-slate-900 bg-slate-100 border-2 border-indigo-500 rounded-xl px-3 py-2 space-y-1.5 transition">
-                            <div class="text-sm font-medium dark:text-white text-slate-900 flex items-center gap-2">
-                                <span class="w-5 h-5 rounded-full bg-indigo-600 text-white text-xs flex items-center justify-center font-bold shrink-0">4</span>
-                                <span>Välj rätt tolkning:</span>
-                            </div>
-                            <div id="g1-meaning-options" class="grid grid-cols-1 gap-1.5">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FEEDBACK BANNER -->
-                    <div id="g1-feedback-banner" class="hidden dark:bg-slate-900 bg-slate-100 border rounded-xl px-3 py-1.5 text-sm flex items-center justify-between gap-2 shrink-0">
-                        <div id="g1-feedback-text" class="font-normal"></div>
-                        <div id="g1-next-row" class="flex items-center gap-2 shrink-0">
-                            <button onclick="generateNextFas2Question()" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-3.5 py-1 rounded-lg text-sm transition shadow-sm flex items-center gap-1.5">
-                                <span>Nästa</span> <i class="fa-solid fa-arrow-right"></i>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- MILESTONE CHOICE BANNER (5 / 5) -->
-                    <div id="g1-milestone-banner" class="hidden dark:bg-emerald-950/90 bg-emerald-100 border-2 border-emerald-500 rounded-xl p-3 text-sm dark:text-emerald-100 text-emerald-950 space-y-2 shadow-md shrink-0">
-                        <div class="font-bold dark:text-emerald-400 text-emerald-800 text-base flex items-center gap-2">
-                            <i class="fa-solid fa-trophy text-amber-500"></i>
-                            <span>Fas 2 avklarad! (5 / 5)</span>
-                        </div>
-                        <p class="font-normal">
-                            Fas 3 (Direkt) är nu upplåst. Där skriver du direkt in svaret utan stegvis vägledning.
-                        </p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                            <button onclick="switchTab(3)" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold px-3 py-1.5 rounded-lg text-sm transition shadow-sm flex items-center justify-center gap-1.5">
-                                <span>Gå till Fas 3: Direkt</span>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </button>
-                            <button onclick="continueFas2Practice()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-3 py-1.5 rounded-lg text-sm transition shadow-sm flex items-center justify-center gap-1.5">
-                                <i class="fa-solid fa-rotate-right"></i>
-                                <span>Fortsätt träna här</span>
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- ================================================================= -->
-        <!-- FLIK 3: FAS 3 — 3. Direkt (TWO-COLUMN: UPPGIFT / DINA SVAR)       -->
-        <!-- ================================================================= -->
-        <section id="tab-content-3" class="tab-content h-full flex flex-col justify-between space-y-2 hidden">
-            
-            <div class="dark:bg-slate-950 bg-white border dark:border-slate-800 border-slate-300 rounded-xl px-4 py-1.5 flex justify-between items-center shrink-0 shadow-sm">
-                <div class="flex items-center gap-2.5">
-                    <span class="px-2.5 py-0.5 bg-blue-100 dark:bg-blue-900/70 text-blue-800 dark:text-blue-300 font-semibold text-xs sm:text-sm rounded-full border border-blue-300 dark:border-blue-700">
-                        Fas 3 • Direkt: Beräkna och tolka
-                    </span>
-                </div>
-
-                <div class="flex items-center gap-3">
-                    <span class="text-sm dark:text-slate-300 text-slate-700 font-semibold" id="p-score">Klarade: 0 / 6</span>
-                </div>
-            </div>
-
-            <!-- TWO-COLUMN WORKSPACE: LEFT = UPPGIFT, RIGHT = DINA SVAR -->
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-3 flex-grow items-stretch overflow-hidden">
-                
-                <!-- LEFT COLUMN: UPPGIFT -->
-                <div class="md:col-span-5 dark:bg-slate-950 bg-white rounded-2xl p-4 border dark:border-slate-800 border-slate-300 flex flex-col justify-between shadow-sm overflow-hidden">
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between border-b dark:border-slate-800 border-slate-200 pb-2">
-                            <span class="text-xs font-bold uppercase tracking-wider dark:text-indigo-400 text-indigo-700 flex items-center gap-1.5">
-                                <i class="fa-solid fa-book-open"></i> Uppgift
-                            </span>
-                            <button type="button" onclick="revealPracticeHint()" id="p-hint-btn" class="text-xs font-semibold px-2.5 py-1 rounded-lg dark:bg-slate-900 bg-slate-100 border dark:border-slate-700 border-slate-300 dark:text-amber-300 text-amber-800 hover:border-amber-500 transition flex items-center gap-1">
-                                <i class="fa-solid fa-lightbulb"></i> Visa ledtråd
-                            </button>
-                        </div>
-
-                        <p class="text-base sm:text-lg dark:text-slate-100 text-slate-900 font-normal leading-relaxed" id="p-scenario-text"></p>
-
-                        <p class="text-base sm:text-lg font-bold dark:text-amber-300 text-amber-800 leading-relaxed" id="p-question-title"></p>
-
-                        <!-- REVEALED AFTER CALCULATION IS SOLVED -->
-                        <div id="p-interpret-prompt" class="hidden pt-2 border-t dark:border-slate-800 border-slate-200">
-                            <p class="text-base sm:text-lg font-semibold dark:text-indigo-300 text-indigo-700 leading-relaxed">
-                                Tolka vad ditt svar betyder i det här sammanhanget.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- PROGRESSIVE ALGEBRAIC HINT BOX -->
-                    <div id="p-hint-box" class="hidden dark:bg-amber-950/60 bg-amber-50 border border-amber-500/60 rounded-xl p-3 text-sm dark:text-amber-200 text-amber-950 space-y-1">
-                        <div class="font-bold text-xs uppercase tracking-wider dark:text-amber-400 text-amber-800 flex items-center gap-1.5">
-                            <i class="fa-solid fa-lightbulb"></i> Uppställning
-                        </div>
-                        <p id="p-hint-text" class="font-normal leading-snug"></p>
-                    </div>
-                </div>
-
-                <!-- RIGHT COLUMN: DINA SVAR -->
-                <div class="md:col-span-7 dark:bg-slate-950 bg-white rounded-2xl p-4 border dark:border-slate-800 border-slate-300 flex flex-col justify-between shadow-sm space-y-3 overflow-hidden">
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between border-b dark:border-slate-800 border-slate-200 pb-1.5">
-                            <span class="text-xs font-bold uppercase tracking-wider dark:text-emerald-400 text-emerald-700 flex items-center gap-1.5">
-                                <i class="fa-solid fa-pen-to-square"></i> Dina svar
-                            </span>
-                        </div>
-
-                        <!-- PART A: CALCULATION INPUT (NO UNITS) -->
-                        <div class="space-y-2">
-                            <div class="flex flex-wrap items-center justify-between gap-2">
-                                <span class="text-sm font-medium dark:text-slate-300 text-slate-700">
-                                    Skriv ditt svar (utan enhet):
-                                </span>
-                                <div class="flex gap-2">
-                                    <button type="button" onclick="insertPracticeFuncNotation()" id="p-dyn-func-btn" class="px-3 py-1 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-semibold text-sm transition shadow-sm">
-                                        K() =
-                                    </button>
-                                    <button type="button" onclick="insertPracticeXNotation()" id="p-dyn-var-btn" class="px-3 py-1 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-semibold text-sm transition shadow-sm">
-                                        x =
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="flex items-center gap-2">
-                                <input type="text" id="p-answer-input" autocomplete="off"
-                                       class="flex-grow dark:bg-slate-900 bg-slate-50 border dark:border-slate-700 border-slate-300 dark:text-white text-slate-900 font-semibold text-lg rounded-xl px-4 py-2 outline-none focus:border-indigo-500">
-                                
-                                <button onclick="checkPracticeAnswer()" id="p-submit-btn" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-base px-4 py-2 rounded-xl transition shadow-sm flex items-center justify-center gap-2 shrink-0">
-                                    <i class="fa-solid fa-paper-plane"></i>
-                                    <span>Rätta</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- PART B: MULTIPLE-CHOICE INTERPRETATION (HIDDEN UNTIL PART A IS CORRECT) -->
-                        <div id="p-interpret-box" class="hidden dark:bg-slate-900 bg-slate-100 border-2 border-indigo-500 rounded-xl p-3 space-y-2">
-                            <div class="text-sm font-semibold dark:text-white text-slate-900">
-                                Välj rätt tolkning:
-                            </div>
-                            <div id="p-meaning-options" class="grid grid-cols-1 gap-1.5">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="space-y-2 shrink-0">
-                        <!-- RETURN TO FAS 2 PROMPT (SHOWN WHEN WRONG MORE THAN TWICE) -->
-                        <div id="p-return-fas2-banner" class="hidden dark:bg-amber-950/90 bg-amber-100 border-2 border-amber-500 rounded-xl p-3 text-sm dark:text-amber-100 text-amber-950 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
-                            <div class="space-y-0.5">
-                                <div class="font-bold dark:text-amber-300 text-amber-800 flex items-center gap-1.5">
-                                    <i class="fa-solid fa-compass"></i>
-                                    <span>Träna med stegvis hjälp först</span>
-                                </div>
-                                <p class="font-normal">
-                                    Du har svarat fel mer än två gånger. Gå tillbaka till Fas 2 och öva med vägledning innan du fortsätter här.
-                                </p>
-                            </div>
-                            <button onclick="returnToFas2FromFas3()" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold px-3.5 py-2 rounded-lg text-sm transition shadow-sm shrink-0 flex items-center gap-1.5">
-                                <i class="fa-solid fa-arrow-left"></i>
-                                <span>Gå till Fas 2: Guidad</span>
-                            </button>
-                        </div>
-
-                        <!-- FEEDBACK BANNER -->
-                        <div id="p-next-banner" class="hidden dark:bg-emerald-950/80 bg-emerald-100 border border-emerald-500 rounded-xl p-3 text-sm dark:text-emerald-200 text-emerald-950 space-y-2">
-                            <div class="font-normal flex items-start gap-2" id="p-feedback-msg"></div>
-                            <div id="p-next-row" class="hidden flex justify-between items-center pt-1.5 border-t dark:border-emerald-900 border-emerald-300">
-                                <span class="text-xs sm:text-sm">Tryck Enter eller klicka:</span>
-                                <button onclick="generateNextPractice()" id="p-next-btn" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold px-3.5 py-1 rounded-lg text-sm transition shadow-sm flex items-center gap-1.5">
-                                    <span>Nästa uppgift</span> <i class="fa-solid fa-arrow-right"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- MILESTONE CHOICE BANNER (6 / 6) -->
-                        <div id="p-handoff-banner" class="hidden dark:bg-amber-950/90 bg-amber-100 border-2 border-amber-500 rounded-xl p-3 text-sm dark:text-amber-100 text-amber-950 space-y-2 shadow-md">
-                            <div class="font-bold dark:text-amber-400 text-amber-800 text-base flex items-center gap-2">
-                                <i class="fa-solid fa-trophy text-amber-500"></i>
-                                <span>Fas 3 avklarad! (6 / 6)</span>
-                            </div>
-                            <p class="font-normal">
-                                Fas 4 (Utmaning) är nu upplåst. Vill du gå vidare till Utmaningen eller fortsätta träna här?
-                            </p>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                <button onclick="switchTab(4)" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold px-3 py-1.5 rounded-lg text-sm transition shadow-sm flex items-center justify-center gap-1.5">
-                                    <span>Gå till Fas 4: Utmaning</span>
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </button>
-                                <button onclick="continueFas3Practice()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-3 py-1.5 rounded-lg text-sm transition shadow-sm flex items-center justify-center gap-1.5">
-                                    <i class="fa-solid fa-rotate-right"></i>
-                                    <span>Fortsätt träna här</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
             </div>
 
         </section>
@@ -934,19 +854,6 @@
             });
         }
 
-        function insertAtCursor(inputId, snippet) {
-            const input = document.getElementById(inputId);
-            if (!input || input.disabled) return;
-            const start = input.selectionStart ?? input.value.length;
-            const end = input.selectionEnd ?? input.value.length;
-            const before = input.value.slice(0, start);
-            const after = input.value.slice(end);
-            input.value = before + snippet + after;
-            const newPos = start + snippet.length;
-            input.focus();
-            input.setSelectionRange(newPos, newPos);
-        }
-
         /* ---------------- INTERACTIVE CALCULATOR LOGIC ---------------- */
         let calcCurrent = "0";
         let calcPrev = null;
@@ -1087,12 +994,16 @@
                 kRange: [300, 350, 400],
                 mRange: [150, 200, 250],
                 xRange: [2, 3, 4, 5, 6],
+                askForYText: (x) => `Hur mycket kostar det att hyra surfbrädan i ${x} ${x === 1 ? 'dag' : 'dagar'}?`,
+                askForXText: (y) => `Hur många dagar kan man hyra surfbrädan för ${formatSvNum(y)} kr?`,
+                askStartText: `Hur stor är startavgiften för att hyra surfbrädan?`,
+                askZeroText: null,
                 meaningGivenX: (x, y) => x === 0
                     ? `Startavgiften för att hyra surfbrädan är ${formatSvNum(y)} kr.`
                     : `Kostnaden för att hyra surfbrädan i ${x} ${x === 1 ? 'dag' : 'dagar'} är ${formatSvNum(y)} kr.`,
                 meaningGivenY: (x, y) => `För ${formatSvNum(y)} kr kan man hyra surfbrädan i ${x} ${x === 1 ? 'dag' : 'dagar'}.`,
                 rateMeaning: (k) => `Priset ökar med ${formatSvNum(k)} kr per dag.`,
-                zeroPrompt: null
+                zeroQuestion: null
             },
             {
                 id: 'kanot',
@@ -1110,12 +1021,16 @@
                 kRange: [40, 50, 60],
                 mRange: [50, 60, 80],
                 xRange: [2, 3, 4, 5, 6],
+                askForYText: (x) => `Hur mycket kostar det att hyra kanoten i ${x} ${x === 1 ? 'timme' : 'timmar'}?`,
+                askForXText: (y) => `Hur många timmar kan man hyra kanoten för ${formatSvNum(y)} kr?`,
+                askStartText: `Hur stor är startavgiften för att hyra kanoten?`,
+                askZeroText: null,
                 meaningGivenX: (x, y) => x === 0
                     ? `Startavgiften för att hyra kanoten är ${formatSvNum(y)} kr.`
                     : `Kostnaden för att hyra kanoten i ${x} ${x === 1 ? 'timme' : 'timmar'} är ${formatSvNum(y)} kr.`,
                 meaningGivenY: (x, y) => `För ${formatSvNum(y)} kr kan man hyra kanoten i ${x} ${x === 1 ? 'timme' : 'timmar'}.`,
                 rateMeaning: (k) => `Hyran ökar med ${formatSvNum(k)} kr per timme.`,
-                zeroPrompt: null
+                zeroQuestion: null
             },
             {
                 id: 'biljetter',
@@ -1133,12 +1048,16 @@
                 kRange: [150, 180, 220],
                 mRange: [25, 30, 40],
                 xRange: [2, 3, 4, 5, 6],
+                askForYText: (x) => `Hur mycket kostar det att beställa ${x} ${x === 1 ? 'konsertbiljett' : 'konsertbiljetter'}?`,
+                askForXText: (y) => `Hur många konsertbiljetter får man för ${formatSvNum(y)} kr?`,
+                askStartText: `Hur stor är expeditionsavgiften när man beställer 0 biljetter?`,
+                askZeroText: null,
                 meaningGivenX: (x, y) => x === 0
                     ? `Expeditionsavgiften vid 0 biljetter är ${formatSvNum(y)} kr.`
                     : `Kostnaden för ${x} ${x === 1 ? 'konsertbiljett' : 'konsertbiljetter'} är ${formatSvNum(y)} kr.`,
                 meaningGivenY: (x, y) => `För ${formatSvNum(y)} kr får man ${x} ${x === 1 ? 'konsertbiljett' : 'konsertbiljetter'}.`,
                 rateMeaning: (k) => `Varje konsertbiljett kostar ${formatSvNum(k)} kr.`,
-                zeroPrompt: null
+                zeroQuestion: null
             },
             {
                 id: 'temperatur',
@@ -1156,12 +1075,16 @@
                 kRange: [8, 10, 12],
                 mRange: [20, 22, 25],
                 xRange: [3, 4, 5, 6, 8],
+                askForYText: (t) => `Vilken temperatur har ugnen efter ${t} minuter?`,
+                askForXText: (y) => `Efter hur många minuter når ugnen temperaturen ${formatSvNum(y)} °C?`,
+                askStartText: `Vilken starttemperatur har ugnen när den sätts på?`,
+                askZeroText: null,
                 meaningGivenX: (t, y) => t === 0
                     ? `Starttemperaturen i ugnen när t = 0 är ${formatSvNum(y)} °C.`
                     : `Efter ${t} minuter är temperaturen i ugnen ${formatSvNum(y)} °C.`,
                 meaningGivenY: (t, y) => `Det tar ${t} minuter för ugnen att nå ${formatSvNum(y)} °C.`,
                 rateMeaning: (k) => `Temperaturen stiger med ${formatSvNum(k)} °C per minut.`,
-                zeroPrompt: null
+                zeroQuestion: null
             },
             {
                 id: 'vattentank',
@@ -1179,6 +1102,10 @@
                 kRange: [-25, -30, -40],
                 mRange: [240, 300, 360],
                 xRange: [2, 3, 4, 5, 6],
+                askForYText: (t) => `Hur många liter vatten finns det kvar i tanken efter ${t} minuter?`,
+                askForXText: (y) => `Efter hur många minuter finns det ${formatSvNum(y)} liter vatten kvar i tanken?`,
+                askStartText: `Hur många liter vatten fanns det i tanken från början?`,
+                askZeroText: `Efter hur många minuter är vattentanken helt tom?`,
                 meaningGivenX: (t, y) => t === 0
                     ? `Från början (vid t = 0) fanns det ${formatSvNum(y)} liter vatten i tanken.`
                     : y === 0
@@ -1207,6 +1134,10 @@
                 kRange: [-10, -12.5, -20],
                 mRange: [100],
                 xRange: [2, 3, 4],
+                askForYText: (t) => `Hur många procent är kvar av batteriet efter ${t} timmar?`,
+                askForXText: (y) => `Efter hur många timmar är batterinivån ${formatSvNum(y)} procent?`,
+                askStartText: `Hur många procent var batteriet laddat från början?`,
+                askZeroText: `Efter hur många timmar är batteriet helt urladdat?`,
                 meaningGivenX: (t, y) => t === 0
                     ? `Från början (vid t = 0) är batteriet laddat till ${formatSvNum(y)} procent.`
                     : y === 0
@@ -1235,6 +1166,10 @@
                 kRange: [-50, -60, -75],
                 mRange: [300, 450, 600],
                 xRange: [2, 3, 4],
+                askForYText: (x) => `Hur mycket pengar finns det kvar på presentkortet efter ${x} köpta luncher?`,
+                askForXText: (y) => `Hur många luncher har man köpt när det återstår ${formatSvNum(y)} kr på presentkortet?`,
+                askStartText: `Hur mycket pengar var presentkortet laddat med från början?`,
+                askZeroText: `Hur många luncher räcker hela presentkortet till?`,
                 meaningGivenX: (x, y) => x === 0
                     ? `Från början var presentkortet laddat med ${formatSvNum(y)} kr.`
                     : y === 0
@@ -1368,7 +1303,28 @@
         let demoX = 3;
         let isDemoDragging = false;
 
-        // Fas 1 State (6/6, balanced 3+3, max 2 in a row, distractor-specific help text)
+        // Fas 1 State (NEW: 10/10 rapid-fire variable vs function value in textuppgifter)
+        let f0Current = null;
+        let f0Score = 0;
+        let f0Target = 10;
+        let f0Answered = false;
+        let f0MilestoneShown = false;
+        let f0TypeQueue = [];
+        let f0RecentTypes = [];
+        let f0LastScenarioId = null;
+
+        // Fas 2 State (NEW: 5/5 worksheet-style paired deluppgifter a & b for one function)
+        let d2Current = null;
+        let d2Score = 0;
+        let d2Target = 5;
+        let d2SolvedA = false;
+        let d2SolvedB = false;
+        let d2BothSolved = false;
+        let d2MilestoneShown = false;
+        let d2WrongCount = 0;
+        let d2LastScenarioId = null;
+
+        // Fas 3 State (EXACT ORIGINAL TOLKA PHASE: 6/6, balanced 3+3, max 2 in a row)
         let f1Current = null;
         let f1Score = 0;
         let f1Target = 6;
@@ -1378,30 +1334,7 @@
         let f1RecentTypes = [];
         let f1LastScenarioId = null;
 
-        // Fas 2 State (5/5, two-column algebraic 4-step workflow)
-        let g1Current = null;
-        let g1Score = 0;
-        let g1TotalTarget = 5;
-        let g1Step = 1;
-        let g1Answered = false;
-        let g1MilestoneShown = false;
-        let g1TypeQueue = [];
-        let g1RecentTypes = [];
-        let g1LastScenarioId = null;
-
-        // Fas 3 State (6/6, two-column direct calculation without units + post-calc interpretation)
-        let pCurrent = null;
-        let pScore = 0;
-        let pCalcSolved = false;
-        let pAnswered = false;
-        let pMilestoneShown = false;
-        let pWrongCount = 0;
-        let pConsecutiveWrong = 0;
-        let pTypeQueue = [];
-        let pRecentTypes = [];
-        let pLastScenarioId = null;
-
-        // Fas 4 State (6/6, two-column linear comparisons, differences & intervals — NO quadratics)
+        // Fas 4 State (6/6, two-column linear comparisons, differences & intervals)
         let f5Current = null;
         let f5Score = 0;
         let f5CalcSolved = false;
@@ -1521,86 +1454,7 @@
             }
         });
 
-        /* ---------------- VALIDATION: ERSÄTTNING, NOTATION & UNITS ---------------- */
-        function validateErsattning(userInput, type, tpl, k, m, xVal, yVal) {
-            if (!userInput) return { ok: false, reason: 'empty' };
-            const normalized = stripThousandSpaces(toAsciiMinus(userInput))
-                .replace(/\s+/g, '')
-                .replace(/\*/g, '·')
-                .replace(/,/g, '.')
-                .toLowerCase();
-            const parts = normalized.split('=');
-            if (parts.length !== 2 || !parts[0] || !parts[1]) {
-                return { ok: false, reason: 'no_equals' };
-            }
-
-            const [lhs, rhs] = parts;
-            const fn = tpl.fnName.toLowerCase();
-            const v = tpl.varName.toLowerCase();
-            const absK = Math.abs(k);
-
-            if (type === 'givenX') {
-                const expectedLhs = `${fn}(${xVal})`;
-                if (lhs !== expectedLhs) {
-                    return { ok: false, reason: 'wrong_lhs' };
-                }
-                if (rhs === `${yVal}`) {
-                    return { ok: false, reason: 'already_simplified' };
-                }
-                let validRhs = [];
-                if (k >= 0) {
-                    validRhs = [
-                        `${k}·${xVal}+${m}`,
-                        `${m}+${k}·${xVal}`,
-                        `${xVal}·${k}+${m}`,
-                        `${m}+${xVal}·${k}`,
-                        `${k}(${xVal})+${m}`,
-                        `${m}+${k}(${xVal})`
-                    ];
-                } else {
-                    validRhs = [
-                        `${m}-${absK}·${xVal}`,
-                        `${m}-${xVal}·${absK}`,
-                        `${m}-${absK}(${xVal})`,
-                        `-${absK}·${xVal}+${m}`,
-                        `-${absK}(${xVal})+${m}`
-                    ];
-                }
-                if (validRhs.includes(rhs)) {
-                    return { ok: true };
-                }
-                return { ok: false, reason: 'wrong_rhs' };
-            } else {
-                if (lhs === v && rhs === `${xVal}`) {
-                    return { ok: false, reason: 'already_simplified' };
-                }
-                if (lhs === `${fn}(${v})` || rhs === `${fn}(${v})`) {
-                    return { ok: false, reason: 'unsubstituted_fn' };
-                }
-                let validExprs = [];
-                if (k >= 0) {
-                    validExprs = [
-                        `${k}${v}+${m}`,
-                        `${k}·${v}+${m}`,
-                        `${m}+${k}${v}`,
-                        `${m}+${k}·${v}`
-                    ];
-                } else {
-                    validExprs = [
-                        `${m}-${absK}${v}`,
-                        `${m}-${absK}·${v}`,
-                        `-${absK}${v}+${m}`,
-                        `-${absK}·${v}+${m}`
-                    ];
-                }
-                const targetY = `${yVal}`;
-                if ((validExprs.includes(lhs) && rhs === targetY) || (lhs === targetY && validExprs.includes(rhs))) {
-                    return { ok: true };
-                }
-                return { ok: false, reason: 'wrong_eq' };
-            }
-        }
-
+        /* ---------------- VALIDATION: NOTATION & UNITS ---------------- */
         function extractNumAndUnit(rawValStr) {
             const s = stripThousandSpaces(toAsciiMinus(rawValStr)).trim().replace(/,/g, '.');
             const match = s.match(/^([+-]?\d+(?:\.\d+)?)\s*(.*)$/);
@@ -1610,30 +1464,6 @@
             return { num, unit };
         }
 
-        // Fas 2 Step 3: Requires function/variable notation (e.g. K(3) = 1 250 or t = 4), optional unit allowed
-        function validateFas2Notation(userInput, type, tpl, givenVal, expectedAns) {
-            if (!userInput) return false;
-            const clean = stripThousandSpaces(toAsciiMinus(userInput)).trim().toLowerCase();
-            const fn = tpl.fnName.toLowerCase();
-            const v = tpl.varName.toLowerCase();
-
-            const eqIdx = clean.indexOf('=');
-            if (eqIdx === -1) return false;
-
-            const lhs = clean.slice(0, eqIdx).replace(/\s+/g, '');
-            const rhsRaw = clean.slice(eqIdx + 1).trim();
-            const parsed = extractNumAndUnit(rhsRaw);
-            if (!parsed || isNaN(parsed.num)) return false;
-            if (Math.abs(parsed.num - expectedAns) > 0.001) return false;
-
-            if (type === 'givenX') {
-                return (lhs === `${fn}(${givenVal})` || lhs === 'y');
-            } else {
-                return (lhs === v);
-            }
-        }
-
-        // Fas 3 (forbidUnit: true) & Fas 4 (validUnits enforced)
         function validateDirectAnswer(userInput, opts) {
             if (!userInput) return { status: 'empty' };
             const s = stripThousandSpaces(toAsciiMinus(userInput)).trim().toLowerCase();
@@ -1647,6 +1477,9 @@
                 const lhs = parts[0].replace(/\s+/g, '');
                 rhsStr = parts[1].trim();
 
+                if (lhs === 'y') {
+                    return { status: 'used_y' };
+                }
                 if (opts.wrongLhsPrefixes && opts.wrongLhsPrefixes.some(p => lhs.startsWith(p))) {
                     return { status: 'wrong_var' };
                 }
@@ -1727,20 +1560,20 @@
             if (e.shiftKey && (e.key === 'F' || e.key === 'f')) {
                 e.preventDefault();
                 if (activeTab === 1) {
+                    f0Score++;
+                    document.getElementById('f0-score').innerText = `Framsteg: ${f0Score} / ${f0Target}`;
+                    if (f0Score >= f0Target && !f0MilestoneShown) { unlockPhase2(); showFas0Milestone(); }
+                    else nextFas0Question();
+                } else if (activeTab === 2) {
+                    d2Score++;
+                    document.getElementById('d2-score').innerText = `Klarade: ${d2Score} / ${d2Target}`;
+                    if (d2Score >= d2Target && !d2MilestoneShown) { unlockPhase3(); showD2Milestone(); }
+                    else generateNextDirectWorksheet();
+                } else if (activeTab === 3) {
                     f1Score++;
                     document.getElementById('f1-score').innerText = `Framsteg: ${f1Score} / ${f1Target}`;
-                    if (f1Score >= f1Target && !f1MilestoneShown) { unlockPhase2(); showFas1Milestone(); }
+                    if (f1Score >= f1Target && !f1MilestoneShown) { unlockPhase4(); showFas1Milestone(); }
                     else nextFas1Question();
-                } else if (activeTab === 2) {
-                    g1Score++;
-                    document.getElementById('g1-score').innerText = `Framsteg: ${g1Score} / ${g1TotalTarget}`;
-                    if (g1Score >= g1TotalTarget && !g1MilestoneShown) { unlockPhase3(); showFas2Milestone(); }
-                    else generateNextFas2Question();
-                } else if (activeTab === 3) {
-                    pScore++;
-                    document.getElementById('p-score').innerText = `Klarade: ${pScore} / 6`;
-                    if (pScore >= 6 && !pMilestoneShown) { unlockPhase4(); showFas3Milestone(); }
-                    else generateNextPractice();
                 } else if (activeTab === 4) {
                     f5Score++;
                     document.getElementById('f5-score').innerText = `Klarade: ${f5Score} / 6`;
@@ -1750,8 +1583,36 @@
                 return;
             }
 
-            // Fas 1 keyboard support: 1/2/3 to answer, Enter for next
+            // Fas 1 (Vilket värde?) keyboard support: 1/2 to answer, Enter for next
             if (activeTab === 1) {
+                const milestoneVisible = !document.getElementById('f0-milestone-banner').classList.contains('hidden');
+                if (milestoneVisible) return;
+
+                if (!f0Answered && e.key === '1') {
+                    e.preventDefault();
+                    answerFas0('givenX');
+                } else if (!f0Answered && e.key === '2') {
+                    e.preventDefault();
+                    answerFas0('givenY');
+                } else if (f0Answered && e.key === 'Enter') {
+                    e.preventDefault();
+                    nextFas0Question();
+                }
+                return;
+            }
+
+            // Fas 2 (Direkt deluppgifter) Enter-to-next when both solved
+            if (activeTab === 2 && d2BothSolved && e.key === 'Enter') {
+                const milestoneVisible = !document.getElementById('d2-milestone-banner').classList.contains('hidden');
+                if (!milestoneVisible) {
+                    e.preventDefault();
+                    generateNextDirectWorksheet();
+                }
+                return;
+            }
+
+            // Fas 3 (Tolka) keyboard support: 1/2/3 to answer, Enter for next
+            if (activeTab === 3) {
                 const milestoneVisible = !document.getElementById('f1-milestone-banner').classList.contains('hidden');
                 if (milestoneVisible) return;
 
@@ -1765,27 +1626,7 @@
                 return;
             }
 
-            // Fas 2 Enter-to-next
-            if (activeTab === 2 && g1Answered && e.key === 'Enter') {
-                const milestoneVisible = !document.getElementById('g1-milestone-banner').classList.contains('hidden');
-                if (!milestoneVisible) {
-                    e.preventDefault();
-                    generateNextFas2Question();
-                }
-                return;
-            }
-
-            // Fas 3 Enter-to-next
-            if (activeTab === 3 && pAnswered && e.key === 'Enter') {
-                const milestoneVisible = !document.getElementById('p-handoff-banner').classList.contains('hidden');
-                if (!milestoneVisible) {
-                    e.preventDefault();
-                    generateNextPractice();
-                }
-                return;
-            }
-
-            // Fas 4 Enter-to-next
+            // Fas 4 (Utmaning) Enter-to-next
             if (activeTab === 4 && f5Answered && e.key === 'Enter') {
                 const milestoneVisible = !document.getElementById('f5-celebration-banner').classList.contains('hidden');
                 if (!milestoneVisible) {
@@ -1871,7 +1712,14 @@
 
             setTimeout(() => {
                 if (tabIdx === 0) { resizeCanvas('demo-canvas'); drawDemoCanvas(); renderDemoTable(); }
-                else if (tabIdx === 1 && !f1Current) { nextFas1Question(); }
+                else if (tabIdx === 1 && !f0Current) { nextFas0Question(); }
+                else if (tabIdx === 2) {
+                    if (!d2Current) generateNextDirectWorksheet();
+                    if (!d2SolvedA) document.getElementById('d2-input-a').focus();
+                    else if (!d2SolvedB) document.getElementById('d2-input-b').focus();
+                }
+                else if (tabIdx === 3 && !f1Current) { nextFas1Question(); }
+                else if (tabIdx === 4 && !f5Current) { nextF5Question(); }
             }, 40);
         }
 
@@ -2062,7 +1910,393 @@
             window.addEventListener('touchend', () => { isDemoDragging = false; });
         }
 
-        /* ---------------- TAB 1: FAS 1 — 1. Tolka (6 PROBLEMS, DISTRACTOR HINTS) ---------------- */
+        /* ---------------- TAB 1: FAS 1 — 1. Vilket värde? (10 RAPID-FIRE TEXTUPPGIFTER) ---------------- */
+        function generateFas0Problem() {
+            const type = drawNextBalancedType(f0TypeQueue, f0RecentTypes, 'givenX', 'givenY', 5);
+            const inst = createRandomLinearInstance(f0LastScenarioId, true);
+            if (type === 'givenY' && inst.x === 0) {
+                inst.x = pickRandom(inst.tpl.xRange);
+                inst.y = Math.round((inst.m + inst.k * inst.x) * 1000) / 1000;
+            }
+            f0LastScenarioId = inst.tpl.id;
+
+            const { tpl, k, m, x, y } = inst;
+            const fn = tpl.fnName;
+            const v = tpl.varName;
+            const scenarioText = tpl.intro(k, m);
+
+            let promptText, explanationRight, explanationWrong;
+
+            if (type === 'givenX') {
+                if (x === 0) {
+                    promptText = tpl.askStartText;
+                    explanationRight = `Rätt! Startvärdet fås när <strong>${v} = 0</strong> (${tpl.unitPlur}), så du beräknar <strong>${fn}(0)</strong>.`;
+                    explanationWrong = `Inte riktigt — frågan gäller startvärdet vid <strong>${v} = 0</strong> (${tpl.unitPlur}). Alltså är <strong>${v}-värdet</strong> givet och du söker <strong>${fn}(0)</strong>.`;
+                } else {
+                    promptText = tpl.askForYText(x);
+                    explanationRight = `Rätt! Här är <strong>${v} = ${x}</strong> (${x === 1 ? tpl.unitSing : tpl.unitPlur}) givet, så du söker funktionsvärdet <strong>${fn}(${x})</strong>.`;
+                    explanationWrong = `Inte riktigt — talet <strong>${x}</strong> mäter <strong>${x === 1 ? tpl.unitSing : tpl.unitPlur}</strong> (${v}), inte ${tpl.yDisplayUnit}. Alltså är <strong>${v}-värdet</strong> givet.`;
+                }
+            } else {
+                if (y === 0 && tpl.askZeroText) {
+                    promptText = tpl.askZeroText;
+                    explanationRight = `Rätt! När det har tagit helt slut är funktionsvärdet <strong>${fn}(${v}) = 0</strong> (${tpl.yDisplayUnit}), så du söker <strong>${v}</strong>.`;
+                    explanationWrong = `Inte riktigt — att det är helt slut betyder att funktionsvärdet <strong>${fn}(${v}) = 0</strong> (${tpl.yDisplayUnit}). Alltså är <strong>funktionsvärdet ${fn}(${v})</strong> givet.`;
+                } else {
+                    promptText = tpl.askForXText(y);
+                    explanationRight = `Rätt! Här är funktionsvärdet <strong>${fn}(${v}) = ${formatSvNum(y)}</strong> (${tpl.yDisplayUnit}) givet, så du söker <strong>${v}</strong>.`;
+                    explanationWrong = `Inte riktigt — talet <strong>${formatSvNum(y)}</strong> har enheten <strong>${tpl.yDisplayUnit}</strong>, vilket är funktionsvärdet <strong>${fn}(${v})</strong>. Alltså söker du <strong>${v}</strong>.`;
+                }
+            }
+
+            return {
+                type,
+                inst,
+                scenarioText,
+                promptText,
+                explanationRight,
+                explanationWrong
+            };
+        }
+
+        function nextFas0Question() {
+            f0Current = generateFas0Problem();
+            f0Answered = false;
+
+            const { tpl } = f0Current.inst;
+            document.getElementById('f0-scenario-text').innerText = f0Current.scenarioText;
+            document.getElementById('f0-prompt-text').innerText = f0Current.promptText;
+
+            const btnVar = document.getElementById('f0-btn-var');
+            const btnFn = document.getElementById('f0-btn-fn');
+            btnVar.disabled = false;
+            btnFn.disabled = false;
+
+            btnVar.className = "px-4 py-3.5 rounded-xl border-2 dark:border-slate-700 border-slate-300 dark:bg-slate-900 bg-slate-50 dark:text-slate-100 text-slate-900 hover:border-blue-500 transition flex items-center gap-3 text-left";
+            btnFn.className = "px-4 py-3.5 rounded-xl border-2 dark:border-slate-700 border-slate-300 dark:bg-slate-900 bg-slate-50 dark:text-slate-100 text-slate-900 hover:border-rose-500 transition flex items-center gap-3 text-left";
+
+            document.getElementById('f0-btn-var-title').innerText = `${tpl.varName}-värdet`;
+            document.getElementById('f0-btn-var-sub').innerText = tpl.unitPlur;
+
+            document.getElementById('f0-btn-fn-title').innerText = `funktionsvärdet ${tpl.fnName}(${tpl.varName})`;
+            document.getElementById('f0-btn-fn-sub').innerText = tpl.yDisplayUnit;
+
+            document.getElementById('f0-feedback-box').classList.add('hidden');
+            document.getElementById('f0-next-btn').classList.add('hidden');
+            document.getElementById('f0-milestone-banner').classList.add('hidden');
+        }
+
+        function answerFas0(chosenType) {
+            if (!f0Current || f0Answered) return;
+
+            const btnVar = document.getElementById('f0-btn-var');
+            const btnFn = document.getElementById('f0-btn-fn');
+            const chosenBtn = chosenType === 'givenX' ? btnVar : btnFn;
+            const fbBox = document.getElementById('f0-feedback-box');
+            const fbText = document.getElementById('f0-feedback-text');
+            const nextBtn = document.getElementById('f0-next-btn');
+
+            fbBox.classList.remove('hidden');
+
+            if (chosenType === f0Current.type) {
+                f0Answered = true;
+                f0Score++;
+                registerCorrectAction();
+                document.getElementById('f0-score').innerText = `Framsteg: ${f0Score} / ${f0Target}`;
+
+                btnVar.disabled = true;
+                btnFn.disabled = true;
+                chosenBtn.className = "px-4 py-3.5 rounded-xl border-2 border-emerald-500 bg-emerald-500 text-slate-950 transition flex items-center gap-3 text-left font-semibold";
+
+                fbBox.className = "w-full rounded-xl px-3.5 py-2.5 text-sm font-normal flex items-center justify-between gap-2 dark:bg-emerald-950/90 bg-emerald-100 border border-emerald-500 dark:text-emerald-200 text-emerald-950";
+                fbText.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-500 mr-1.5"></i> ${f0Current.explanationRight}`;
+
+                if (f0Score >= f0Target && !f0MilestoneShown) {
+                    unlockPhase2();
+                    showFas0Milestone();
+                } else {
+                    nextBtn.classList.remove('hidden');
+                }
+            } else {
+                f0Score = Math.max(0, f0Score - 1);
+                document.getElementById('f0-score').innerText = `Framsteg: ${f0Score} / ${f0Target}`;
+                registerMistakeAction();
+
+                chosenBtn.disabled = true;
+                chosenBtn.className = "px-4 py-3.5 rounded-xl border-2 border-rose-500 bg-rose-500/20 dark:text-rose-300 text-rose-800 transition flex items-center gap-3 text-left opacity-80";
+
+                fbBox.className = "w-full rounded-xl px-3.5 py-2.5 text-sm font-normal flex items-center justify-between gap-2 dark:bg-rose-950/90 bg-rose-100 border border-rose-500 dark:text-rose-200 text-rose-950";
+                fbText.innerHTML = `<i class="fa-solid fa-circle-xmark text-rose-500 mr-1.5"></i> ${f0Current.explanationWrong}`;
+                nextBtn.classList.add('hidden');
+            }
+        }
+
+        function showFas0Milestone() {
+            f0MilestoneShown = true;
+            document.getElementById('f0-next-btn').classList.add('hidden');
+            document.getElementById('f0-milestone-banner').classList.remove('hidden');
+        }
+
+        function continueFas0Practice() {
+            document.getElementById('f0-milestone-banner').classList.add('hidden');
+            nextFas0Question();
+        }
+
+        /* ---------------- TAB 2: FAS 2 — 2. Direkt (PAIRED DELUPPGIFTER a & b) ---------------- */
+        function generateDirectWorksheetProblem() {
+            const pool = d2LastScenarioId
+                ? LINEAR_MODEL_TEMPLATES.filter(s => s.id !== d2LastScenarioId)
+                : LINEAR_MODEL_TEMPLATES;
+            const tpl = pickRandom(pool);
+            d2LastScenarioId = tpl.id;
+
+            const k = pickRandom(tpl.kRange);
+            const m = pickRandom(tpl.mRange);
+
+            // Pick two distinct x-values so part a) and part b) use fresh numbers
+            const shuffledXs = shuffleOptions([...tpl.xRange]);
+            let xForGivenX = shuffledXs[0];
+            let xForGivenY = shuffledXs[1];
+
+            // Occasionally include start value (x = 0) or root (F(x) = 0) just like worksheets
+            if (Math.random() < 0.25) {
+                xForGivenX = 0;
+            }
+            if (tpl.direction === 'dec' && Math.random() < 0.25) {
+                const rootX = m / Math.abs(k);
+                if (Number.isInteger(rootX) && rootX !== xForGivenX) {
+                    xForGivenY = rootX;
+                }
+            }
+
+            const yForGivenX = Math.round((m + k * xForGivenX) * 1000) / 1000;
+            const yForGivenY = Math.round((m + k * xForGivenY) * 1000) / 1000;
+
+            const fn = tpl.fnName;
+            const v = tpl.varName;
+            const fnLower = fn.toLowerCase();
+            const vLower = v.toLowerCase();
+
+            const partGivenX = {
+                type: 'givenX',
+                prompt: xForGivenX === 0 ? tpl.askStartText : tpl.askForYText(xForGivenX),
+                ansStr: `${fn}(${xForGivenX}) = ${formatSvNum(yForGivenX)} ${tpl.yDisplayUnit}`,
+                hint: `Sätt in ${v} = ${xForGivenX} i formeln och beräkna ${fn}(${xForGivenX}).`,
+                validationOpts: {
+                    expectedLhsList: [`${fnLower}(${xForGivenX})`],
+                    wrongLhsPrefixes: [vLower],
+                    expectedNum: yForGivenX,
+                    validUnits: tpl.yUnits,
+                    displayUnit: tpl.yDisplayUnit,
+                    countable: false,
+                    unitPlural: tpl.yDisplayUnit
+                }
+            };
+
+            const partGivenY = {
+                type: 'givenY',
+                prompt: (yForGivenY === 0 && tpl.askZeroText) ? tpl.askZeroText : tpl.askForXText(yForGivenY),
+                ansStr: `${v} = ${xForGivenY} ${xForGivenY === 1 ? tpl.unitSing : tpl.unitPlur}`,
+                hint: `Lös ekvationen ${tpl.exprStr(k, m)} = ${formatSvNum(yForGivenY)} för ${v}.`,
+                validationOpts: {
+                    expectedLhsList: [vLower],
+                    wrongLhsPrefixes: [`${fnLower}(`],
+                    expectedNum: xForGivenY,
+                    validUnits: tpl.xUnits,
+                    displayUnit: tpl.unitPlur,
+                    countable: tpl.xCountable,
+                    unitPlural: tpl.unitPlur
+                }
+            };
+
+            // Randomize whether a) is givenX and b) is givenY or vice versa
+            const flipOrder = Math.random() < 0.5;
+            const partA = flipOrder ? partGivenY : partGivenX;
+            const partB = flipOrder ? partGivenX : partGivenY;
+
+            return {
+                tpl,
+                k,
+                m,
+                scenarioText: tpl.intro(k, m),
+                partA,
+                partB,
+                hintStr: `a) ${partA.hint}  •  b) ${partB.hint}`
+            };
+        }
+
+        function generateNextDirectWorksheet() {
+            d2Current = generateDirectWorksheetProblem();
+            d2SolvedA = false;
+            d2SolvedB = false;
+            d2BothSolved = false;
+            d2WrongCount = 0;
+
+            const { tpl } = d2Current;
+            document.getElementById('d2-scenario-text').innerText = d2Current.scenarioText;
+            document.getElementById('d2-prompt-a').innerText = d2Current.partA.prompt;
+            document.getElementById('d2-prompt-b').innerText = d2Current.partB.prompt;
+
+            document.getElementById('d2-hint-box').classList.add('hidden');
+            document.getElementById('d2-hint-btn').classList.remove('hidden');
+
+            ['a', 'b'].forEach(partKey => {
+                document.getElementById(`d2-${partKey}-fn-btn`).innerText = `${tpl.fnName}() =`;
+                document.getElementById(`d2-${partKey}-var-btn`).innerText = `${tpl.varName} =`;
+                document.getElementById(`d2-badge-${partKey}`).classList.add('hidden');
+                document.getElementById(`d2-card-${partKey}`).className = "dark:bg-slate-900 bg-slate-100 border dark:border-slate-800 border-slate-300 rounded-xl p-2.5 space-y-1.5 transition";
+
+                const inp = document.getElementById(`d2-input-${partKey}`);
+                inp.value = '';
+                inp.disabled = false;
+                document.getElementById(`d2-submit-${partKey}`).disabled = false;
+            });
+
+            document.getElementById('d2-feedback-banner').classList.add('hidden');
+            document.getElementById('d2-milestone-banner').classList.add('hidden');
+            document.getElementById('d2-next-row').classList.add('hidden');
+
+            if (activeTab === 2) {
+                document.getElementById('d2-input-a').focus();
+            }
+        }
+
+        function revealD2Hint() {
+            if (!d2Current) return;
+            document.getElementById('d2-hint-text').innerText = d2Current.hintStr;
+            document.getElementById('d2-hint-box').classList.remove('hidden');
+            document.getElementById('d2-hint-btn').classList.add('hidden');
+        }
+
+        function insertD2Prefix(partKey, kind) {
+            if (!d2Current) return;
+            const input = document.getElementById(`d2-input-${partKey}`);
+            if (!input || input.disabled) return;
+            const { tpl } = d2Current;
+            if (kind === 'fn') {
+                input.value = `${tpl.fnName}() = `;
+                input.focus();
+                input.setSelectionRange(tpl.fnName.length + 1, tpl.fnName.length + 1);
+            } else {
+                input.value = `${tpl.varName} = `;
+                input.focus();
+            }
+        }
+
+        function checkD2Part(partKey) {
+            if (!d2Current) return;
+            if (partKey === 'a' && d2SolvedA) return;
+            if (partKey === 'b' && d2SolvedB) return;
+
+            const partObj = partKey === 'a' ? d2Current.partA : d2Current.partB;
+            const input = document.getElementById(`d2-input-${partKey}`);
+            const userVal = input.value.trim();
+            const banner = document.getElementById('d2-feedback-banner');
+            const msg = document.getElementById('d2-feedback-msg');
+            const nextRow = document.getElementById('d2-next-row');
+
+            if (!userVal) {
+                banner.className = "dark:bg-rose-950/80 bg-rose-100 border border-rose-500 rounded-xl p-2.5 text-sm dark:text-rose-200 text-rose-950 space-y-1.5";
+                msg.innerHTML = `<i class="fa-solid fa-circle-xmark text-rose-500 mt-0.5"></i> <span>Skriv ditt svar för <strong>deluppgift ${partKey})</strong> innan du rättar.</span>`;
+                banner.classList.remove('hidden');
+                nextRow.classList.add('hidden');
+                return;
+            }
+
+            const res = validateDirectAnswer(userVal, partObj.validationOpts);
+            const { tpl, k, m } = d2Current;
+
+            if (res.status === 'ok') {
+                registerCorrectAction();
+                input.disabled = true;
+                document.getElementById(`d2-submit-${partKey}`).disabled = true;
+                document.getElementById(`d2-badge-${partKey}`).classList.remove('hidden');
+                document.getElementById(`d2-card-${partKey}`).className = "dark:bg-emerald-950/40 bg-emerald-50 border border-emerald-500/70 rounded-xl p-2.5 space-y-1.5 transition";
+
+                if (partKey === 'a') d2SolvedA = true;
+                if (partKey === 'b') d2SolvedB = true;
+
+                if (d2SolvedA && d2SolvedB) {
+                    d2BothSolved = true;
+                    d2Score++;
+                    document.getElementById('d2-score').innerText = `Klarade: ${d2Score} / ${d2Target}`;
+
+                    banner.className = "dark:bg-emerald-950/80 bg-emerald-100 border border-emerald-500 rounded-xl p-2.5 text-sm dark:text-emerald-200 text-emerald-950 space-y-1.5";
+                    msg.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> <span><strong>Helt rätt på båda!</strong> a) ${d2Current.partA.ansStr} &nbsp;•&nbsp; b) ${d2Current.partB.ansStr}</span>`;
+                    banner.classList.remove('hidden');
+
+                    if (d2Score >= d2Target && !d2MilestoneShown) {
+                        unlockPhase3();
+                        showD2Milestone();
+                    } else {
+                        nextRow.classList.remove('hidden');
+                    }
+                } else {
+                    const otherPart = partKey === 'a' ? 'b' : 'a';
+                    banner.className = "dark:bg-emerald-950/80 bg-emerald-100 border border-emerald-500 rounded-xl p-2.5 text-sm dark:text-emerald-200 text-emerald-950 space-y-1.5";
+                    msg.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> <span><strong>Rätt på ${partKey})!</strong> (${partObj.ansStr}) Lös nu <strong>deluppgift ${otherPart})</strong>.</span>`;
+                    banner.classList.remove('hidden');
+                    nextRow.classList.add('hidden');
+                    document.getElementById(`d2-input-${otherPart}`).focus();
+                }
+                return;
+            }
+
+            if (res.status === 'used_y') {
+                banner.className = "dark:bg-amber-950/80 bg-amber-100 border border-amber-500 rounded-xl p-2.5 text-sm dark:text-amber-200 text-amber-950 space-y-1.5";
+                msg.innerHTML = `<i class="fa-solid fa-circle-info text-amber-500 mt-0.5"></i> <span>Använd funktionens beteckning <strong>${tpl.fnName}(${tpl.varName})</strong> i stället för <strong>y</strong> (eller skriv endast talet).</span>`;
+                banner.classList.remove('hidden');
+                nextRow.classList.add('hidden');
+                return;
+            }
+
+            if (res.status === 'bad_unit') {
+                banner.className = "dark:bg-amber-950/80 bg-amber-100 border border-amber-500 rounded-xl p-2.5 text-sm dark:text-amber-200 text-amber-950 space-y-1.5";
+                msg.innerHTML = `<i class="fa-solid fa-scale-balanced text-amber-500 mt-0.5"></i> <span>Deluppgift ${partKey}): ${res.msg}</span>`;
+                banner.classList.remove('hidden');
+                nextRow.classList.add('hidden');
+                return;
+            }
+
+            d2WrongCount++;
+            d2Score = Math.max(0, d2Score - 1);
+            document.getElementById('d2-score').innerText = `Klarade: ${d2Score} / ${d2Target}`;
+            registerMistakeAction();
+
+            if (d2WrongCount >= 2) {
+                revealD2Hint();
+            }
+
+            let diagnostic = "";
+            if (res.status === 'wrong_var' && partObj.type === 'givenX') {
+                diagnostic = `I deluppgift ${partKey}) är <strong>${tpl.varName}-värdet</strong> redan givet. Nu söker du funktionsvärdet <strong>${tpl.fnName}(...)</strong>.`;
+            } else if (res.status === 'wrong_var' && partObj.type === 'givenY') {
+                diagnostic = `I deluppgift ${partKey}) är <strong>funktionsvärdet</strong> givet. Ställ upp ekvationen och lös ut <strong>${tpl.varName}</strong>.`;
+            } else {
+                pulseCalculatorHint();
+                diagnostic = partObj.type === 'givenX'
+                    ? `Kontrollera beräkningen i deluppgift ${partKey}): sätt in ${tpl.varName}-värdet i <strong>${tpl.exprStr(k, m)}</strong>.`
+                    : `Kontrollera ekvationen i deluppgift ${partKey}): sätt <strong>${tpl.exprStr(k, m)}</strong> lika med det givna funktionsvärdet.`;
+            }
+
+            banner.className = "dark:bg-rose-950/80 bg-rose-100 border border-rose-500 rounded-xl p-2.5 text-sm dark:text-rose-200 text-rose-950 space-y-1.5";
+            msg.innerHTML = `<i class="fa-solid fa-circle-xmark text-rose-500 mt-0.5"></i> <span>${diagnostic}</span>`;
+            banner.classList.remove('hidden');
+            nextRow.classList.add('hidden');
+        }
+
+        function showD2Milestone() {
+            d2MilestoneShown = true;
+            document.getElementById('d2-next-row').classList.add('hidden');
+            document.getElementById('d2-milestone-banner').classList.remove('hidden');
+        }
+
+        function continueD2Practice() {
+            document.getElementById('d2-milestone-banner').classList.add('hidden');
+            generateNextDirectWorksheet();
+        }
+
+        /* ---------------- TAB 3: FAS 3 — 3. Tolka (EXACT ORIGINAL TOLKA PHASE) ---------------- */
         function generateFas1Problem() {
             const subtype = drawNextBalancedType(f1TypeQueue, f1RecentTypes, 'notationToMeaning', 'textToNotation', 3);
             const inst = createRandomLinearInstance(f1LastScenarioId, true);
@@ -2258,7 +2492,7 @@
                 fbText.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-500 mr-1.5"></i> <strong>Rätt!</strong>`;
 
                 if (f1Score >= f1Target && !f1MilestoneShown) {
-                    unlockPhase2();
+                    unlockPhase4();
                     showFas1Milestone();
                 } else {
                     nextBtn.classList.remove('hidden');
@@ -2288,574 +2522,7 @@
             nextFas1Question();
         }
 
-        /* ---------------- TAB 2: FAS 2 — 2. Guidad (DYNAMIC FUNCTIONS, TWO-COLUMN) ---------------- */
-        function generateNextFas2Question() {
-            const type = drawNextBalancedType(g1TypeQueue, g1RecentTypes, 'givenX', 'givenY', 3);
-            const inst = createRandomLinearInstance(g1LastScenarioId, true);
-            if (type === 'givenY' && inst.x === 0) {
-                inst.x = pickRandom(inst.tpl.xRange);
-                inst.y = Math.round((inst.m + inst.k * inst.x) * 1000) / 1000;
-            }
-            g1LastScenarioId = inst.tpl.id;
-
-            const { tpl, k, m, x, y } = inst;
-            const fn = tpl.fnName;
-            const v = tpl.varName;
-            const scenarioText = tpl.intro(k, m);
-            let promptTitle, fullAns, meaningOptions;
-
-            if (type === 'givenX') {
-                promptTitle = `Beräkna ${fn}(${x})`;
-                fullAns = `${fn}(${x}) = ${formatSvNum(y)} ${tpl.yDisplayUnit}`;
-                meaningOptions = shuffleOptions([
-                    { text: tpl.meaningGivenX(x, y), isCorrect: true },
-                    { text: x === 0
-                        ? `Förändringen är ${formatSvNum(y)} ${tpl.yDisplayUnit} per ${tpl.unitSing}.`
-                        : `Vid ${formatSvNum(y)} ${tpl.unitPlur} är värdet ${x} ${tpl.yDisplayUnit}.`, isCorrect: false },
-                    { text: x === 0
-                        ? `Efter ${formatSvNum(y)} ${tpl.unitPlur} är värdet 0 ${tpl.yDisplayUnit}.`
-                        : `Startvärdet när ${v} = 0 är ${formatSvNum(y)} ${tpl.yDisplayUnit}.`, isCorrect: false }
-                ]);
-            } else {
-                promptTitle = `Lös ekvationen ${fn}(${v}) = ${formatSvNum(y)}`;
-                fullAns = `${v} = ${x} ${x === 1 ? tpl.unitSing : tpl.unitPlur}`;
-                meaningOptions = shuffleOptions([
-                    { text: tpl.meaningGivenY(x, y), isCorrect: true },
-                    { text: `Vid ${formatSvNum(y)} ${tpl.unitPlur} är funktionsvärdet ${x} ${tpl.yDisplayUnit}.`, isCorrect: false },
-                    { text: `Förändringen per ${tpl.unitSing} är ${x} ${tpl.yDisplayUnit}.`, isCorrect: false }
-                ]);
-            }
-
-            g1Current = {
-                type,
-                inst,
-                scenarioText,
-                promptTitle,
-                fullAns,
-                meaningOptions
-            };
-
-            g1Step = 1;
-            g1Answered = false;
-
-            document.getElementById('g1-scenario-text').innerText = scenarioText;
-            document.getElementById('g1-prompt-title').innerText = promptTitle;
-            document.getElementById('g1-interpret-prompt').classList.add('hidden');
-
-            document.getElementById('g1-s1-btn-x').innerText = `${v}-värdet`;
-            document.getElementById('g1-s2-fn-btn').innerText = `${fn}() =`;
-            document.getElementById('g1-s2-var-btn').innerText = `${v} =`;
-            document.getElementById('g1-s3-fn-btn').innerText = `${fn}() =`;
-            document.getElementById('g1-s3-var-btn').innerText = `${v} =`;
-
-            const subInput = document.getElementById('g1-sub-input');
-            const finalInput = document.getElementById('g1-final-input');
-            subInput.value = '';
-            subInput.disabled = false;
-            finalInput.value = '';
-            finalInput.disabled = false;
-
-            document.getElementById('g1-step-4-box').classList.add('hidden');
-            document.getElementById('g1-feedback-banner').classList.add('hidden');
-            document.getElementById('g1-milestone-banner').classList.add('hidden');
-            document.getElementById('g1-next-row').classList.remove('hidden');
-
-            renderG1MeaningOptions();
-
-            setG1StepState(1, 'active');
-            setG1StepState(2, 'disabled');
-            setG1StepState(3, 'disabled');
-        }
-
-        function setG1StepState(stepNum, state) {
-            const el = document.getElementById(`g1-step-${stepNum}-box`);
-            if (!el) return;
-
-            const layoutMap = {
-                1: "rounded-xl px-3 py-1.5 flex items-center justify-between gap-2",
-                2: "rounded-xl px-3 py-2 space-y-1.5",
-                3: "rounded-xl px-3 py-2 space-y-1.5"
-            };
-            const base = layoutMap[stepNum];
-
-            if (state === 'active') {
-                el.className = `dark:bg-slate-900 bg-slate-100 border-2 border-indigo-500 ${base} opacity-100 pointer-events-auto`;
-            } else if (state === 'completed') {
-                el.className = `dark:bg-emerald-950/40 bg-emerald-50 border border-emerald-500/60 ${base} opacity-90 pointer-events-none`;
-            } else {
-                el.className = `dark:bg-slate-900 bg-slate-100 border dark:border-slate-800 border-slate-300 ${base} opacity-40 pointer-events-none`;
-            }
-        }
-
-        function answerG1Step1(selectedType) {
-            if (!g1Current || g1Step !== 1) return;
-            const { tpl } = g1Current.inst;
-            if (selectedType === g1Current.type) {
-                registerCorrectAction();
-                document.getElementById('g1-feedback-banner').classList.add('hidden');
-                setG1StepState(1, 'completed');
-                setG1StepState(2, 'active');
-                g1Step = 2;
-                document.getElementById('g1-sub-input').focus();
-            } else {
-                g1Score = Math.max(0, g1Score - 1);
-                document.getElementById('g1-score').innerText = `Framsteg: ${g1Score} / ${g1TotalTarget}`;
-                registerMistakeAction();
-                showG1InlineError(g1Current.type === 'givenX'
-                    ? `Titta i parentesen: det står ett tal i ${tpl.fnName}(...), så ${tpl.varName}-värdet är givet.`
-                    : `Titta på uttrycket: det står ${tpl.varName} i parentesen och ett värde efter likhetstecknet, så funktionsvärdet är givet.`);
-            }
-        }
-
-        function insertG1SubFnTemplate() {
-            if (!g1Current) return;
-            const input = document.getElementById('g1-sub-input');
-            if (!input || input.disabled) return;
-            const fn = g1Current.inst.tpl.fnName;
-            input.value = `${fn}() = `;
-            input.focus();
-            input.setSelectionRange(fn.length + 1, fn.length + 1);
-        }
-
-        function insertG1SubVarTemplate() {
-            if (!g1Current) return;
-            const input = document.getElementById('g1-sub-input');
-            if (!input || input.disabled) return;
-            const v = g1Current.inst.tpl.varName;
-            if (input.value.trim() === '') {
-                input.value = `${v} = `;
-                input.focus();
-            } else {
-                insertAtCursor('g1-sub-input', v);
-            }
-        }
-
-        function insertG1FinalFnTemplate() {
-            if (!g1Current) return;
-            const input = document.getElementById('g1-final-input');
-            if (!input || input.disabled) return;
-            const fn = g1Current.inst.tpl.fnName;
-            input.value = `${fn}() = `;
-            input.focus();
-            input.setSelectionRange(fn.length + 1, fn.length + 1);
-        }
-
-        function insertG1FinalVarTemplate() {
-            if (!g1Current) return;
-            const input = document.getElementById('g1-final-input');
-            if (!input || input.disabled) return;
-            const v = g1Current.inst.tpl.varName;
-            input.value = `${v} = `;
-            input.focus();
-        }
-
-        function submitG1Step2() {
-            if (!g1Current || g1Step !== 2) return;
-            const input = document.getElementById('g1-sub-input');
-            const val = input.value.trim();
-            const { tpl, k, m, x, y } = g1Current.inst;
-            const res = validateErsattning(val, g1Current.type, tpl, k, m, x, y);
-
-            if (res.ok) {
-                registerCorrectAction();
-                document.getElementById('g1-feedback-banner').classList.add('hidden');
-                input.disabled = true;
-                setG1StepState(2, 'completed');
-                setG1StepState(3, 'active');
-                g1Step = 3;
-                document.getElementById('g1-final-input').focus();
-            } else {
-                g1Score = Math.max(0, g1Score - 1);
-                document.getElementById('g1-score').innerText = `Framsteg: ${g1Score} / ${g1TotalTarget}`;
-                registerMistakeAction();
-
-                if (res.reason === 'wrong_lhs') {
-                    showG1InlineError(`Vänster sida måste vara ${tpl.fnName}(${x}) = innan du skriver ersättningen.`);
-                } else if (res.reason === 'already_simplified') {
-                    showG1InlineError("Visa själva ersättningen först innan du räknar ut det färdiga svaret.");
-                } else if (res.reason === 'unsubstituted_fn') {
-                    showG1InlineError(`Ersätt ${tpl.fnName}(${tpl.varName}) med uttrycket ${tpl.exprStr(k, m)}.`);
-                } else {
-                    showG1InlineError(g1Current.type === 'givenX'
-                        ? `Skriv ${tpl.fnName}(${x}) = på vänster sida och byt ut ${tpl.varName} mot ${x} i formeln.`
-                        : `Sätt uttrycket ${tpl.exprStr(k, m)} lika med ${formatSvNum(y)}.`);
-                }
-            }
-        }
-
-        function submitG1Step3() {
-            if (!g1Current || g1Step !== 3) return;
-            const input = document.getElementById('g1-final-input');
-            const val = input.value.trim();
-            const { tpl, k, m, x, y } = g1Current.inst;
-            const givenVal = g1Current.type === 'givenX' ? x : y;
-            const expectedAns = g1Current.type === 'givenX' ? y : x;
-
-            const isCorrect = validateFas2Notation(val, g1Current.type, tpl, givenVal, expectedAns);
-
-            if (isCorrect) {
-                registerCorrectAction();
-                document.getElementById('g1-feedback-banner').classList.add('hidden');
-                input.disabled = true;
-                setG1StepState(3, 'completed');
-
-                document.getElementById('g1-interpret-prompt').classList.remove('hidden');
-                document.getElementById('g1-step-4-box').classList.remove('hidden');
-                g1Step = 4;
-            } else {
-                g1Score = Math.max(0, g1Score - 1);
-                document.getElementById('g1-score').innerText = `Framsteg: ${g1Score} / ${g1TotalTarget}`;
-                registerMistakeAction();
-                pulseCalculatorHint();
-
-                const clean = stripThousandSpaces(toAsciiMinus(val)).replace(/\s+/g, '');
-                if (!clean.includes('=')) {
-                    showG1InlineError(`Skriv svaret med funktionsnotering, t.ex. ${g1Current.type === 'givenX' ? `${tpl.fnName}(${x}) = ...` : `${tpl.varName} = ...`}`);
-                } else {
-                    showG1InlineError(g1Current.type === 'givenX'
-                        ? `Kontrollera uträkningen i formeln ${tpl.exprStr(k, m)} när ${tpl.varName} = ${x}. Använd miniräknaren vid behov.`
-                        : `Lös ekvationen ${tpl.exprStr(k, m)} = ${formatSvNum(y)} steg för steg.`);
-                }
-            }
-        }
-
-        function renderG1MeaningOptions() {
-            const box = document.getElementById('g1-meaning-options');
-            box.innerHTML = g1Current.meaningOptions.map((opt, idx) => `
-                <button id="g1-mopt-${idx}" onclick="answerG1Step4(${idx})"
-                        class="w-full text-left px-3 py-2 rounded-lg border dark:border-slate-700 border-slate-300 dark:bg-slate-950 bg-white dark:text-slate-100 text-slate-900 hover:border-indigo-500 text-sm font-normal transition leading-snug">
-                    ${opt.text}
-                </button>
-            `).join('');
-        }
-
-        function answerG1Step4(idx) {
-            if (!g1Current || g1Step !== 4 || g1Answered) return;
-            const chosen = g1Current.meaningOptions[idx];
-            const btn = document.getElementById(`g1-mopt-${idx}`);
-            const banner = document.getElementById('g1-feedback-banner');
-            const txt = document.getElementById('g1-feedback-text');
-            const nextRow = document.getElementById('g1-next-row');
-
-            if (chosen.isCorrect) {
-                g1Answered = true;
-                g1Score++;
-                registerCorrectAction();
-                document.getElementById('g1-score').innerText = `Framsteg: ${g1Score} / ${g1TotalTarget}`;
-
-                btn.className = "w-full text-left px-3 py-2 rounded-lg border-2 border-emerald-500 bg-emerald-500 text-slate-950 text-sm font-semibold transition leading-snug";
-                g1Current.meaningOptions.forEach((_, i) => {
-                    const b = document.getElementById(`g1-mopt-${i}`);
-                    if (b) b.disabled = true;
-                });
-
-                banner.className = "dark:bg-emerald-950/90 bg-emerald-100 border border-emerald-500 rounded-xl px-3 py-1.5 text-sm flex items-center justify-between gap-2 dark:text-emerald-200 text-emerald-950 shrink-0";
-                txt.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-500 mr-1"></i> <strong>Helt rätt!</strong> ${g1Current.fullAns} — ${chosen.text}`;
-                banner.classList.remove('hidden');
-
-                if (g1Score >= g1TotalTarget && !g1MilestoneShown) {
-                    unlockPhase3();
-                    showFas2Milestone();
-                } else {
-                    nextRow.classList.remove('hidden');
-                }
-            } else {
-                g1Score = Math.max(0, g1Score - 1);
-                document.getElementById('g1-score').innerText = `Framsteg: ${g1Score} / ${g1TotalTarget}`;
-                registerMistakeAction();
-                btn.className = "w-full text-left px-3 py-2 rounded-lg border border-rose-500 bg-rose-500/20 dark:text-rose-300 text-rose-800 text-sm font-normal transition leading-snug";
-                btn.disabled = true;
-                const { tpl, x, y } = g1Current.inst;
-                showG1InlineError(`Kontrollera enheterna: ${tpl.varName} = ${x} (${tpl.unitPlur}) och ${tpl.fnName}(${x}) = ${formatSvNum(y)} (${tpl.yDisplayUnit}).`);
-            }
-        }
-
-        function showG1InlineError(message) {
-            const banner = document.getElementById('g1-feedback-banner');
-            const txt = document.getElementById('g1-feedback-text');
-            document.getElementById('g1-next-row').classList.add('hidden');
-            banner.className = "dark:bg-rose-950/90 bg-rose-100 border border-rose-500 rounded-xl px-3 py-1.5 text-sm flex items-center justify-between gap-2 dark:text-rose-200 text-rose-950 shrink-0";
-            txt.innerHTML = `<i class="fa-solid fa-circle-xmark text-rose-500 mr-1"></i> ${message}`;
-            banner.classList.remove('hidden');
-        }
-
-        function showFas2Milestone() {
-            g1MilestoneShown = true;
-            document.getElementById('g1-next-row').classList.add('hidden');
-            document.getElementById('g1-milestone-banner').classList.remove('hidden');
-        }
-
-        function continueFas2Practice() {
-            document.getElementById('g1-milestone-banner').classList.add('hidden');
-            generateNextFas2Question();
-        }
-
-        /* ---------------- TAB 3: FAS 3 — 3. Direkt (NO UNITS IN INPUT; UNITS IN INTERPRETATION) ---------------- */
-        function generateNextPractice() {
-            const type = drawNextBalancedType(pTypeQueue, pRecentTypes, 'givenX', 'givenY', 3);
-            const inst = createRandomLinearInstance(pLastScenarioId, true);
-            if (type === 'givenY' && inst.x === 0) {
-                inst.x = pickRandom(inst.tpl.xRange);
-                inst.y = Math.round((inst.m + inst.k * inst.x) * 1000) / 1000;
-            }
-            pLastScenarioId = inst.tpl.id;
-
-            const { tpl, k, m, x, y } = inst;
-            const fn = tpl.fnName;
-            const v = tpl.varName;
-            const scenarioText = tpl.intro(k, m);
-            const questionTitle = (type === 'givenX') ? `Beräkna ${fn}(${x})` : `Lös ekvationen ${fn}(${v}) = ${formatSvNum(y)}`;
-
-            // No units in ansStr so the interpretation step tests unit understanding
-            const ansStr = (type === 'givenX')
-                ? `${fn}(${x}) = ${formatSvNum(y)}`
-                : `${v} = ${x}`;
-
-            const hintStr = (type === 'givenX')
-                ? `Sätt in ${v} = ${x} i formeln: ${fn}(${x}) = ${tpl.exprStr(k, m).replace(new RegExp(v, 'g'), ` · ${x}`).replace('·  ·', '·')}`
-                : `Ställ upp ekvationen: ${tpl.exprStr(k, m)} = ${formatSvNum(y)}`;
-
-            const meaningOptions = (type === 'givenX')
-                ? shuffleOptions([
-                    { text: tpl.meaningGivenX(x, y), isCorrect: true },
-                    { text: x === 0
-                        ? `Förändringen är ${formatSvNum(y)} ${tpl.yDisplayUnit} per ${tpl.unitSing}.`
-                        : `Vid ${formatSvNum(y)} ${tpl.unitPlur} är värdet ${x} ${tpl.yDisplayUnit}.`, isCorrect: false },
-                    { text: x === 0
-                        ? `Efter ${formatSvNum(y)} ${tpl.unitPlur} är värdet 0 ${tpl.yDisplayUnit}.`
-                        : `Startvärdet när ${v} = 0 är ${formatSvNum(y)} ${tpl.yDisplayUnit}.`, isCorrect: false }
-                ])
-                : shuffleOptions([
-                    { text: tpl.meaningGivenY(x, y), isCorrect: true },
-                    { text: `Vid ${formatSvNum(y)} ${tpl.unitPlur} är funktionsvärdet ${x} ${tpl.yDisplayUnit}.`, isCorrect: false },
-                    { text: `Förändringen per ${tpl.unitSing} är ${x} ${tpl.yDisplayUnit}.`, isCorrect: false }
-                ]);
-
-            pCurrent = { type, inst, scenarioText, questionTitle, ansStr, hintStr, meaningOptions };
-            pCalcSolved = false;
-            pAnswered = false;
-            pWrongCount = 0;
-
-            document.getElementById('p-scenario-text').innerText = scenarioText;
-            document.getElementById('p-question-title').innerText = questionTitle;
-            document.getElementById('p-interpret-prompt').classList.add('hidden');
-            document.getElementById('p-hint-box').classList.add('hidden');
-            document.getElementById('p-hint-btn').classList.remove('hidden');
-
-            document.getElementById('p-dyn-func-btn').innerText = `${fn}() =`;
-            document.getElementById('p-dyn-var-btn').innerText = `${v} =`;
-
-            document.getElementById('p-interpret-box').classList.add('hidden');
-            document.getElementById('p-next-banner').classList.add('hidden');
-            document.getElementById('p-handoff-banner').classList.add('hidden');
-            document.getElementById('p-return-fas2-banner').classList.add('hidden');
-            document.getElementById('p-next-row').classList.add('hidden');
-
-            renderPracticeMeaningOptions();
-
-            const input = document.getElementById('p-answer-input');
-            input.value = '';
-            input.disabled = false;
-            document.getElementById('p-submit-btn').disabled = false;
-            if (activeTab === 3) input.focus();
-        }
-
-        function revealPracticeHint() {
-            if (!pCurrent) return;
-            document.getElementById('p-hint-text').innerText = pCurrent.hintStr;
-            document.getElementById('p-hint-box').classList.remove('hidden');
-            document.getElementById('p-hint-btn').classList.add('hidden');
-        }
-
-        function renderPracticeMeaningOptions() {
-            const box = document.getElementById('p-meaning-options');
-            box.innerHTML = pCurrent.meaningOptions.map((opt, idx) => `
-                <button id="p-mopt-${idx}" onclick="answerPracticeInterpretation(${idx})"
-                        class="w-full text-left px-3 py-2 rounded-lg border dark:border-slate-700 border-slate-300 dark:bg-slate-950 bg-white dark:text-slate-100 text-slate-900 hover:border-indigo-500 text-sm font-normal transition leading-snug">
-                    ${opt.text}
-                </button>
-            `).join('');
-        }
-
-        function returnToFas2FromFas3() {
-            pWrongCount = 0;
-            pConsecutiveWrong = 0;
-            document.getElementById('p-return-fas2-banner').classList.add('hidden');
-            switchTab(2);
-            generateNextFas2Question();
-        }
-
-        function insertPracticeFuncNotation() {
-            if (!pCurrent) return;
-            const input = document.getElementById('p-answer-input');
-            if (input.disabled) return;
-            const fn = pCurrent.inst.tpl.fnName;
-            input.value = `${fn}() = `;
-            input.focus();
-            input.setSelectionRange(fn.length + 1, fn.length + 1);
-        }
-
-        function insertPracticeXNotation() {
-            if (!pCurrent) return;
-            const input = document.getElementById('p-answer-input');
-            if (input.disabled) return;
-            const v = pCurrent.inst.tpl.varName;
-            input.value = `${v} = `;
-            input.focus();
-        }
-
-        function checkPracticeAnswer() {
-            if (!pCurrent || pCalcSolved) return;
-            const input = document.getElementById('p-answer-input');
-            const userVal = input.value.trim();
-            const banner = document.getElementById('p-next-banner');
-            const msg = document.getElementById('p-feedback-msg');
-            const nextRow = document.getElementById('p-next-row');
-
-            if (!userVal) {
-                banner.className = "dark:bg-rose-950/80 bg-rose-100 border border-rose-500 rounded-xl p-3 text-sm dark:text-rose-200 text-rose-950 space-y-2";
-                msg.innerHTML = `<i class="fa-solid fa-circle-xmark text-rose-500 mt-0.5"></i> <span>Skriv ditt svar i rutan innan du rättar.</span>`;
-                banner.classList.remove('hidden');
-                nextRow.classList.add('hidden');
-                return;
-            }
-
-            const { tpl, k, m, x, y } = pCurrent.inst;
-            const fnLower = tpl.fnName.toLowerCase();
-            const vLower = tpl.varName.toLowerCase();
-
-            const validationOpts = (pCurrent.type === 'givenX')
-                ? {
-                    expectedLhsList: [`${fnLower}(${x})`, 'y'],
-                    wrongLhsPrefixes: [vLower],
-                    expectedNum: y,
-                    forbidUnit: true
-                }
-                : {
-                    expectedLhsList: [vLower],
-                    wrongLhsPrefixes: [`${fnLower}(`, 'y'],
-                    expectedNum: x,
-                    forbidUnit: true
-                };
-
-            const res = validateDirectAnswer(userVal, validationOpts);
-
-            if (res.status === 'ok') {
-                pCalcSolved = true;
-                pConsecutiveWrong = 0;
-                registerCorrectAction();
-                input.disabled = true;
-                input.blur();
-                document.getElementById('p-submit-btn').disabled = true;
-                document.getElementById('p-return-fas2-banner').classList.add('hidden');
-
-                document.getElementById('p-interpret-prompt').classList.remove('hidden');
-                document.getElementById('p-interpret-box').classList.remove('hidden');
-
-                banner.className = "dark:bg-emerald-950/80 bg-emerald-100 border border-emerald-500 rounded-xl p-3 text-sm dark:text-emerald-200 text-emerald-950 space-y-2";
-                msg.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> <span><strong>Rätt beräknat!</strong> (${pCurrent.ansStr}) Välj nu rätt tolkning ovan.</span>`;
-                banner.classList.remove('hidden');
-                nextRow.classList.add('hidden');
-                return;
-            }
-
-            if (res.status === 'has_unit' || res.status === 'bad_unit') {
-                banner.className = "dark:bg-amber-950/80 bg-amber-100 border border-amber-500 rounded-xl p-3 text-sm dark:text-amber-200 text-amber-950 space-y-2";
-                msg.innerHTML = `<i class="fa-solid fa-circle-info text-amber-500 mt-0.5"></i> <span>${res.msg}</span>`;
-                banner.classList.remove('hidden');
-                nextRow.classList.add('hidden');
-                return;
-            }
-
-            pWrongCount++;
-            pConsecutiveWrong++;
-            pScore = Math.max(0, pScore - 1);
-            document.getElementById('p-score').innerText = `Klarade: ${pScore} / 6`;
-            registerMistakeAction();
-
-            if (pWrongCount >= 2) {
-                revealPracticeHint();
-            }
-            if (pWrongCount > 2 || pConsecutiveWrong > 2) {
-                document.getElementById('p-return-fas2-banner').classList.remove('hidden');
-            }
-
-            let diagnostic = "";
-            if (res.status === 'wrong_var' && pCurrent.type === 'givenX') {
-                diagnostic = `Du har redan fått ${tpl.varName} = ${x}. Nu söker du funktionsvärdet <strong>${tpl.fnName}(${x})</strong>.`;
-            } else if (res.status === 'wrong_var' && pCurrent.type === 'givenY') {
-                diagnostic = `Du har fått funktionsvärdet ${formatSvNum(y)}. Lös ekvationen <strong>${tpl.fnName}(${tpl.varName}) = ${formatSvNum(y)}</strong> för att hitta <strong>${tpl.varName}</strong>.`;
-            } else {
-                pulseCalculatorHint();
-                diagnostic = pCurrent.type === 'givenX'
-                    ? `Kontrollera beräkningen: sätt in ${tpl.varName} = ${x} i <strong>${tpl.exprStr(k, m)}</strong>.`
-                    : `Kontrollera ekvationen: <strong>${tpl.exprStr(k, m)} = ${formatSvNum(y)}</strong>.`;
-            }
-
-            banner.className = "dark:bg-rose-950/80 bg-rose-100 border border-rose-500 rounded-xl p-3 text-sm dark:text-rose-200 text-rose-950 space-y-2";
-            msg.innerHTML = `<i class="fa-solid fa-circle-xmark text-rose-500 mt-0.5"></i> <span>${diagnostic}</span>`;
-            banner.classList.remove('hidden');
-            nextRow.classList.add('hidden');
-        }
-
-        function answerPracticeInterpretation(idx) {
-            if (!pCurrent || !pCalcSolved || pAnswered) return;
-            const chosen = pCurrent.meaningOptions[idx];
-            const btn = document.getElementById(`p-mopt-${idx}`);
-            const banner = document.getElementById('p-next-banner');
-            const msg = document.getElementById('p-feedback-msg');
-            const nextRow = document.getElementById('p-next-row');
-
-            if (chosen.isCorrect) {
-                pAnswered = true;
-                pScore++;
-                registerCorrectAction();
-                document.getElementById('p-score').innerText = `Klarade: ${pScore} / 6`;
-
-                btn.className = "w-full text-left px-3 py-2 rounded-lg border-2 border-emerald-500 bg-emerald-500 text-slate-950 text-sm font-semibold transition leading-snug";
-                pCurrent.meaningOptions.forEach((_, i) => {
-                    const b = document.getElementById(`p-mopt-${i}`);
-                    if (b) b.disabled = true;
-                });
-
-                banner.className = "dark:bg-emerald-950/80 bg-emerald-100 border border-emerald-500 rounded-xl p-3 text-sm dark:text-emerald-200 text-emerald-950 space-y-2";
-                msg.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-500 mt-0.5"></i> <span><strong>Helt rätt!</strong> ${pCurrent.ansStr} — ${chosen.text}</span>`;
-                banner.classList.remove('hidden');
-
-                if (pScore >= 6 && !pMilestoneShown) {
-                    unlockPhase4();
-                    showFas3Milestone();
-                } else {
-                    nextRow.classList.remove('hidden');
-                }
-            } else {
-                pScore = Math.max(0, pScore - 1);
-                document.getElementById('p-score').innerText = `Klarade: ${pScore} / 6`;
-                registerMistakeAction();
-
-                btn.className = "w-full text-left px-3 py-2 rounded-lg border border-rose-500 bg-rose-500/20 dark:text-rose-300 text-rose-800 text-sm font-normal transition leading-snug";
-                btn.disabled = true;
-
-                const { tpl } = pCurrent.inst;
-                banner.className = "dark:bg-rose-950/80 bg-rose-100 border border-rose-500 rounded-xl p-3 text-sm dark:text-rose-200 text-rose-950 space-y-2";
-                msg.innerHTML = `<i class="fa-solid fa-circle-xmark text-rose-500 mt-0.5"></i> <span>Inte riktigt — kontrollera vilket tal som mäter ${tpl.unitPlur} och vilket som mäter ${tpl.yDisplayUnit}.</span>`;
-                banner.classList.remove('hidden');
-                nextRow.classList.add('hidden');
-            }
-        }
-
-        function showFas3Milestone() {
-            pMilestoneShown = true;
-            document.getElementById('p-next-row').classList.add('hidden');
-            document.getElementById('p-handoff-banner').classList.remove('hidden');
-        }
-
-        function continueFas3Practice() {
-            document.getElementById('p-handoff-banner').classList.add('hidden');
-            generateNextPractice();
-        }
-
-        /* ---------------- TAB 4: FAS 4 — 4. Utmaning (LINEAR ONLY — NO QUADRATICS) ---------------- */
+        /* ---------------- TAB 4: FAS 4 — 4. Utmaning (LINEAR ONLY) ---------------- */
         function generateF5Problem() {
             const subtype = drawNextBalancedType(f5TypeQueue, f5RecentTypes, 'compare', 'intervalDiff', 3);
 
@@ -2928,7 +2595,7 @@
                     meaningOptions,
                     validationOpts: {
                         expectedLhsList: ['x'],
-                        wrongLhsPrefixes: ['k', 'y'],
+                        wrongLhsPrefixes: ['k'],
                         expectedNum: x,
                         validUnits: tpl.xUnits,
                         displayUnit: tpl.xUnitPlur,
@@ -3203,29 +2870,23 @@
 
         /* ---------------- INPUT LISTENERS & INIT ---------------- */
         function setupInputListeners() {
-            ['g1-sub-input', 'g1-final-input', 'p-answer-input', 'f5-input-ans'].forEach(attachSmartMathInput);
+            ['d2-input-a', 'd2-input-b', 'f5-input-ans'].forEach(attachSmartMathInput);
 
-            document.getElementById('g1-sub-input').addEventListener('keydown', (e) => {
+            document.getElementById('d2-input-a').addEventListener('keydown', (e) => {
                 if (e.key === 'Enter') {
                     e.preventDefault();
                     e.stopPropagation();
-                    submitG1Step2();
+                    if (d2BothSolved) generateNextDirectWorksheet();
+                    else checkD2Part('a');
                 }
             });
 
-            document.getElementById('g1-final-input').addEventListener('keydown', (e) => {
+            document.getElementById('d2-input-b').addEventListener('keydown', (e) => {
                 if (e.key === 'Enter') {
                     e.preventDefault();
                     e.stopPropagation();
-                    submitG1Step3();
-                }
-            });
-
-            document.getElementById('p-answer-input').addEventListener('keydown', (e) => {
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    checkPracticeAnswer();
+                    if (d2BothSolved) generateNextDirectWorksheet();
+                    else checkD2Part('b');
                 }
             });
 
@@ -3247,9 +2908,9 @@
             setupDemoCanvasEvents();
             setupInputListeners();
 
+            nextFas0Question();
+            generateNextDirectWorksheet();
             nextFas1Question();
-            generateNextFas2Question();
-            generateNextPractice();
             nextF5Question();
 
             resizeCanvas('demo-canvas');
